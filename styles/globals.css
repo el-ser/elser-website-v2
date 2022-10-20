@@ -1,3 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer components {
+  .transition-theme {
+    @apply transition-all duration-500 ease-in-out;
+  }
+  .navigation-bg {
+    @apply bg-white/80 dark:bg-navy-blue-800/90 shadow-md shadow-gray-200 dark:shadow-gray-900 backdrop-filter backdrop-blur-sm;
+  }
+  .text-color {
+    @apply text-navy-blue-700 dark:text-smoke-600;
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -15,12 +32,12 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: black;
+    background: white;
   }
-}
+} */
