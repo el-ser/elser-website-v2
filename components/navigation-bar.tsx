@@ -31,9 +31,10 @@ const NavigationBar = () => {
     enter: { x: 0 },
     leave: { x: 1000 },
   });
-
   const dispatch = useAppDispatch();
-  const { colors } = tailwindConfig.theme.extend;
+  const colors = tailwindConfig.theme?.extend?.colors as {
+    [key: string]: string;
+  };
 
   const handleDarkMode = () => {
     const htmlElement = document.querySelector("html");
@@ -72,9 +73,9 @@ const NavigationBar = () => {
               className="flex items-center h-full w-16"
             >
               {useDarkMode ? (
-                <FaMoon className="h-2/5 w-full" />
+                <FaMoon className="h-2/5 w-full cursor-pointer" />
               ) : (
-                <FaSun className="h-2/5 w-full" />
+                <FaSun className="h-2/5 w-full cursor-pointer" />
               )}
             </span>
             <FiAlignRight

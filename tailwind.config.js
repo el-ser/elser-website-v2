@@ -25,24 +25,15 @@ module.exports = {
         4: 4,
       },
       animation: {
-        "slide-in-from-right": "slide-in-from-right 0.5s ease normal",
-        "slide-out-to-right": "slide-out-to-right 0.5s ease normal",
+        "pulse-70": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
-        "slide-in-from-right": {
-          "0%": {
-            transform: "translateX(500px)",
+        "pulse-70": {
+          "0%, 100%": {
+            opacity: 1,
           },
-          "100%": {
-            transform: "translateX(0px)",
-          },
-        },
-        "slide-out-to-right": {
-          "0%": {
-            transform: "translateX(0px)",
-          },
-          "100%": {
-            transform: "translateX(500px)",
+          "50%": {
+            opacity: 0.7,
           },
         },
       },

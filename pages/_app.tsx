@@ -7,14 +7,9 @@ import { Provider } from "react-redux";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <div
-        id="body-wrapper"
-        className="transition-theme bg-white dark:bg-navy-blue-800"
-      >
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </div>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   );
 }

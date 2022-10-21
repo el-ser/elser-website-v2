@@ -1,9 +1,11 @@
 import Link from "next/link";
 
-import { useAppSelector } from "../store/hooks";
+import { useAppSelector, useAppDispatch } from "../store/hooks";
 import { selectNavigationList } from "../store/navigation/navigation.selector";
+import { setIsSideBarOpen } from "../store/navigation/navigation.slice";
 
 const NavigationLinks = ({ additionalClass }: { additionalClass?: string }) => {
+  const dispatch = useAppDispatch();
   const navigationList = useAppSelector(selectNavigationList);
 
   return (
@@ -13,6 +15,9 @@ const NavigationLinks = ({ additionalClass }: { additionalClass?: string }) => {
           <Link key={idx} href={path.to}>
             <a
               className={`font-poppins no-underline transition-theme text-navy-blue-700 dark:text-smoke-600 ${additionalClass}`}
+              onClick={() => {
+                dispatch(setIsSideBarOpen());
+              }}
             >
               {path.text}
             </a>
