@@ -13,6 +13,9 @@
   .text-color {
     @apply text-navy-blue-700 dark:text-smoke-600;
   }
+  .parallax-icon-size {
+    @apply absolute w-12 h-12 md:w-16 md:h-16
+  }
 
 }
 

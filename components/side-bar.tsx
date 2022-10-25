@@ -13,7 +13,7 @@ const SideBar = ({ animationStyle }: { animationStyle: NavbarStyleType }) => {
   return (
     <animated.aside
       style={animationStyle}
-      className={`fixed flex flex-col z-30 h-full w-full navigation-bg top-0 right-0 md:hidden`}
+      className={`fixed flex flex-col z-50 h-full w-full navigation-bg top-0 right-0 md:hidden`}
     >
       <FaWindowClose
         id="close-sidebar-button"
