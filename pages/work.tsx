@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 
-const Experience: NextPage = () => {
+const Work: NextPage = () => {
   return (
     <div>
       <Head>
@@ -17,4 +16,4 @@ const Experience: NextPage = () => {
   );
 };
 
-export default Experience;
+export default Work;

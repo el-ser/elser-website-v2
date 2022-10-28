@@ -1,10 +1,10 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
-import { RefObject } from "react";
+import React, { MutableRefObject, RefObject } from "react";
 import Image from "next/image";
 
 import TerminalContainer from "./terminal-container";
 
-const IntoDevelopment = ({ parallax }: { parallax: RefObject<IParallax> }) => {
+const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
   return (
     <>
       {/* react icon */}
@@ -30,9 +30,9 @@ const IntoDevelopment = ({ parallax }: { parallax: RefObject<IParallax> }) => {
 
       {/* page 4 title */}
       <ParallaxLayer offset={3} speed={1.5}>
-        <h1 className="flex justify-end text-right text-color font-lexendDeca text-4xl font-bold pt-[20vh] px-[5%]">
+        <h2 className="flex justify-end text-right text-color font-lexendDeca text-5xl font-bold pt-[15vh] px-[5%]">
           Jumping Into Development
-        </h1>
+        </h2>
       </ParallaxLayer>
 
       {/* page 4 description */}
@@ -40,14 +40,21 @@ const IntoDevelopment = ({ parallax }: { parallax: RefObject<IParallax> }) => {
         offset={3}
         speed={2.5}
         className="flex items-center justify-center font-poppins"
-        onClick={() => parallax.current?.scrollTo(4)}
+        onClick={() =>
+          (ref as MutableRefObject<IParallax>).current?.scrollTo(4)
+        }
       >
-        <TerminalContainer
-          text={`With 5 years experience in software testing, I finally decided to pursue my passion for developing softwares. I took online courses on Udemy and LinkedIn Learning, watched YouTube tutorials, wrote blogs about the things I learned, and used my free time to put what I learned into practice. After several months of learning and applying for a developer position, I finally became a JavaScript Developer! `}
-        />
+        <TerminalContainer fileText="yarn add jumping-into --dev">
+          With 5 years experience in software testing, I finally decided to
+          pursue my passion for developing softwares. I took online courses on
+          Udemy and LinkedIn Learning, watched YouTube tutorials, wrote blogs
+          about the things I learned, and used my free time to put what I
+          learned into practice. After several months of learning and applying
+          for a developer position, I finally became a JavaScript Developer!
+        </TerminalContainer>
       </ParallaxLayer>
     </>
   );
-};
+});
 
 export default IntoDevelopment;

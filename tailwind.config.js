@@ -14,10 +14,13 @@ module.exports = {
         "navy-blue-800": "#0D1B2A",
         "smoke-500": "#E0E1DD",
         "smoke-600": "#C6CCD0",
+        "accent-light": "#0D9488",
+        "accent-dark": "#14B8A6",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         lexendDeca: ["Lexend Deca", "sans-serif"],
+        ubuntuMono: ["Ubuntu Mono", "monospace"],
       },
       flexGrow: {
         2: 2,
@@ -25,7 +28,7 @@ module.exports = {
         4: 4,
       },
       animation: {
-        "pulse-70": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "pulse-70": "pulse-70 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
         "pulse-70": {

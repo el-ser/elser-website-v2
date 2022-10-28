@@ -1,10 +1,10 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
-import { RefObject } from "react";
+import React, { MutableRefObject } from "react";
 import Image from "next/image";
 
 import TerminalContainer from "./terminal-container";
 
-const TesterPhase = ({ parallax }: { parallax: RefObject<IParallax> }) => {
+const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
   return (
     <>
       {/* cucumber icon */}
@@ -33,9 +33,9 @@ const TesterPhase = ({ parallax }: { parallax: RefObject<IParallax> }) => {
 
       {/* page 3 title */}
       <ParallaxLayer offset={2} speed={1.5}>
-        <h1 className="flex justify-center text-color font-lexendDeca text-4xl font-bold pt-[20vh] px-[5%]">
+        <h2 className="flex justify-center text-color font-lexendDeca text-5xl font-bold pt-[15vh] px-[5%]">
           Tester Phase
-        </h1>
+        </h2>
       </ParallaxLayer>
 
       {/* page 3 description */}
@@ -43,14 +43,23 @@ const TesterPhase = ({ parallax }: { parallax: RefObject<IParallax> }) => {
         offset={2}
         speed={2.5}
         className="flex items-center justify-center font-poppins"
-        onClick={() => parallax.current?.scrollTo(3)}
+        onClick={() =>
+          (ref as MutableRefObject<IParallax>).current?.scrollTo(3)
+        }
       >
-        <TerminalContainer
-          text={`Fast forward after graduating college in 2016, I started my career as a Test Automation Engineer in a company called Deltek. I didn’t know testing was a thing in software development so I invested my time learning about software testing. As time goes by, new frameworks and libraries became trend in software development such as ReactJS and AngularJS. It offered better developer experience compared to the ones I learned during college which led to asking myself “maybe I could be a developer again?”.`}
-        />
+        <TerminalContainer fileText="yarn test">
+          Fast forward after graduating college in 2016, I started my career as
+          a Test Automation Engineer in a company called Deltek. I didn’t know
+          testing was a thing in software development so I invested my time
+          learning about software testing. As time goes by, new frameworks and
+          libraries became trend in software development such as ReactJS and
+          AngularJS. It offered better developer experience compared to the ones
+          I learned during college which led to asking myself “maybe I could be
+          a developer again?”.
+        </TerminalContainer>
       </ParallaxLayer>
     </>
   );
-};
+});
 
 export default TesterPhase;

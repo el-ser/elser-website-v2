@@ -1,57 +1,50 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
 import Image from "next/image";
 
-import { RefObject } from "react";
+import React, { MutableRefObject } from "react";
 import TerminalContainer from "./terminal-container";
 
-const AboutMe = ({ parallax }: { parallax: RefObject<IParallax> }) => {
+const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
   return (
     <>
       {/** headphone icon */}
       <ParallaxLayer offset={1.7} speed={2.5} className="mt-[15vh]">
-        <Image
-          src="/assets/about-me/headphones.svg"
-          width="100"
-          height="100"
-          className="opacity-60 rotate-45"
-        />
+        <div className="relative w-40 h-40">
+          <Image
+            src="/assets/about-me/headphones.svg"
+            layout="fill"
+            className="opacity-60 rotate-45"
+          />
+        </div>
       </ParallaxLayer>
 
       {/** travel icon */}
-      <ParallaxLayer offset={1.2} speed={1.5} className="mt-[80vh]">
-        <Image
-          src="/assets/about-me/travel.svg"
-          width="250"
-          height="250"
-          className="opacity-60"
-        />
-      </ParallaxLayer>
-
-      {/** guitar icon */}
-      <ParallaxLayer offset={1.0} speed={3} className="mt-[30vh]">
-        <Image
-          src="/assets/about-me/electric-guitar.svg"
-          width="500"
-          height="500"
-          className="opacity-10"
-        />
+      <ParallaxLayer offset={1.2} speed={1.5} className="mt-[60vh]">
+        <div className="relative w-96 h-96">
+          <Image
+            src="/assets/about-me/travel.svg"
+            layout="fill"
+            className="opacity-60"
+          />
+        </div>
       </ParallaxLayer>
 
       {/** camera icon */}
       <ParallaxLayer offset={1} speed={0.9} className="mt-[70vh]">
-        <Image
-          src="/assets/about-me/camera.svg"
-          width="150"
-          height="150"
-          className="opacity-60 -rotate-45"
-        />
+        <div className="relative w-40 h-40">
+          <Image
+            src="/assets/about-me/camera.svg"
+            layout="fill"
+            className="opacity-60 -rotate-45"
+          />
+        </div>
       </ParallaxLayer>
 
       {/* page 2 title */}
       <ParallaxLayer offset={1} speed={1.5}>
-        <h1 className="text-color font-lexendDeca text-4xl font-bold pt-[20vh] px-[5%]">
+        <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[15vh] px-[5%]">
           About Me
-        </h1>
+        </h2>
       </ParallaxLayer>
 
       {/* page 2 description */}
@@ -59,20 +52,22 @@ const AboutMe = ({ parallax }: { parallax: RefObject<IParallax> }) => {
         offset={1}
         speed={2.5}
         className="flex items-center justify-center font-poppins"
-        onClick={() => parallax.current?.scrollTo(2)}
+        onClick={() =>
+          (ref as MutableRefObject<IParallax>).current?.scrollTo(2)
+        }
       >
-        <TerminalContainer
-          text={`My name is Manuel Serafin Bugarin but people usually call me
-                Macky. I graduated with a bachelor’s degree of Computer Science
-                in Mapua University. Similar to others, my exposure to computer
-                was through video games. Have you seen people playing LAN games
-                in a local computer rental shops? Yeah, I used to be one of
-                those kids. As I grew up, I developed interests to 🎸 music ,
-                🎥 film making, and ✈️ travelling!`}
-        />
+        <TerminalContainer fileText="yarn init --aboutme">
+          My name is Manuel Serafin Bugarin but people usually call me Macky. I
+          graduated with a bachelor’s degree of Computer Science in Mapua
+          University. Similar to others, my exposure to computer was through
+          video games. Have you seen people playing LAN games in a local
+          computer rental shops? Yeah, I used to be one of those kids. As I grew
+          up, I developed interests to 🎸 music , 🎥 film making, and ✈️
+          travelling!
+        </TerminalContainer>
       </ParallaxLayer>
     </>
   );
-};
+});
 
 export default AboutMe;

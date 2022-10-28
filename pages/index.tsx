@@ -1,18 +1,17 @@
 import type { NextPage } from "next";
 import { useRef } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import { config } from "react-spring";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-import heroImage from "../public/hero-pic.png";
-import TerminalContainer from "../components/parallax/terminal-container";
 import AboutMe from "../components/parallax/about-me";
 import TesterPhase from "../components/parallax/tester-phase";
 import IntoDevelopment from "../components/parallax/into-development";
+import LastPage from "../components/parallax/last-page";
+import HeroPage from "../components/parallax/hero-page";
 
 const Home: NextPage = () => {
-  const parallax = useRef<IParallax>(null);
+  const parallaxRef = useRef<IParallax>(null!);
 
   return (
     <>
@@ -22,78 +21,29 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Parallax
-          ref={parallax}
+          ref={parallaxRef}
           pages={5}
           style={{ top: "0", left: "0" }}
           config={config.slow}
           horizontal
         >
-          {/* page 1 */}
-          <ParallaxLayer
-            id="page-1"
-            offset={0}
-            onClick={() => parallax.current?.scrollTo(1)}
-            className="text-color"
-          >
-            <section
-              id="hero-section"
-              className="flex flex-col justify-center h-full w-full px-8 md:flex-row-reverse md:gap-8 md:items-center md:justify-around"
-            >
-              <div id="hero-text-container" className="flex flex-col">
-                <h1 className="font-poppins text-2xl md:text-4xl">
-                  Hey there! I am
-                </h1>
-                <h2 className="font-lexendDeca font-bold text-6xl tracking-normal md:text-8xl">
-                  Manu
-                  <span className="transition-theme text-teal-700 dark:text-teal-500">
-                    el Ser
-                  </span>
-                  afin Bugarin
-                </h2>
-                <p className="font-poppins text-xl py-2 px-0 md:text-3xl">
-                  Passionate in building amazing things
-                </p>
-              </div>
-              <div
-                id="hero-image-container"
-                className="self-center max-w-xs md:max-w-sm"
-              >
-                <Image
-                  id="hero-image"
-                  src={heroImage}
-                  alt="hero"
-                  className="rounded-full"
-                />
-              </div>
-            </section>
-          </ParallaxLayer>
+          <HeroPage ref={parallaxRef} />
 
           {/* page 2 - 4 background */}
           <ParallaxLayer
             sticky={{ start: 1, end: 3 }}
-            onClick={() => parallax.current?.scrollTo(2)}
+            onClick={() => parallaxRef.current?.scrollTo(2)}
             className="bg-slate-200 dark:bg-slate-800"
             style={{
               zIndex: -20,
             }}
           />
 
-          <AboutMe parallax={parallax} />
-          <TesterPhase parallax={parallax} />
-          <IntoDevelopment parallax={parallax} />
+          <AboutMe ref={parallaxRef} />
+          <TesterPhase ref={parallaxRef} />
+          <IntoDevelopment ref={parallaxRef} />
 
-          {/* page 5 */}
-          <ParallaxLayer
-            offset={4}
-            className="flex flex-col items-center justify-center text-color"
-            onClick={() => parallax.current?.scrollTo(0)}
-          >
-            <div>Check out my other stuff</div>
-            <div className="flex">
-              <button>Blogs</button>
-              <button>Expereince</button>
-            </div>
-          </ParallaxLayer>
+          <LastPage ref={parallaxRef} />
         </Parallax>
       </main>
     </>

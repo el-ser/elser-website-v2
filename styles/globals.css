@@ -13,10 +13,18 @@
   .text-color {
     @apply text-navy-blue-700 dark:text-smoke-600;
   }
+  .inverted-text-color {
+    @apply text-smoke-600 dark:text-navy-blue-700
+  }
   .parallax-icon-size {
     @apply absolute w-12 h-12 md:w-16 md:h-16
   }
-
+  .button-style {
+    @apply font-poppins rounded-lg px-5 py-4 mx-4 text-2xl font-bold flex justify-center items-center
+  }
+  .icon-size {
+    @apply w-10 h-10 md:w-14 md:h-14
+  }
 }
 
 html,

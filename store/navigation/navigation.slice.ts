@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type NavItem = {
+export type NavItem = {
     to: string;
     text: string;
 };
@@ -14,7 +14,7 @@ type InitialState = {
 }
 
 
-const INITIAL_STATE: InitialState = {
+export const INITIAL_STATE: InitialState = {
     isSideBarOpen: false,
     navigationList: [{
         to: "/",
@@ -25,8 +25,8 @@ const INITIAL_STATE: InitialState = {
         text: "Blogs",
     },
     {
-        to: "/experience",
-        text: "Experience",
+        to: "/work",
+        text: "Work",
     },],
     useDarkMode: false
 }

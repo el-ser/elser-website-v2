@@ -1,17 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { animated, useSpring } from "react-spring";
-import Image from "next/image";
 
 const Blogs: NextPage = () => {
-  const spring = useSpring({
-    from: {
-      opacity: 0,
-    },
-    to: {
-      opacity: 1,
-    },
-  });
   return (
     <div>
       <Head>
