@@ -50,6 +50,9 @@ const LastPage = React.forwardRef<IParallax, {}>((_props, ref) => {
         speed={1.5}
         className="flex flex-col items-center justify-center gap-y-8 text-color"
       >
+        <h2 className="flex justify-end text-center text-color font-lexendDeca text-5xl font-bold pt-[13vh] px-[5%]">
+          LET'S CONNECT!
+        </h2>
         <TerminalContainer textClass="text-start" fileText="yarn publish">
           <>
             Thank you for visiting my website! Feel free to reach out to me

@@ -24,8 +24,8 @@ const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
             <br />
             Bugarin
           </div>
-          <p className="text-2xl md:text-3xl py-2 px-0">
-            Passionate in building amazing things
+          <p className="text-2xl md:text-3xl py-4 px-0">
+            Let's turn your ideas into reality!
           </p>
         </h1>
       </section>

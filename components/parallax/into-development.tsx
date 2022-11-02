@@ -30,7 +30,7 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
 
       {/* page 4 title */}
       <ParallaxLayer offset={3} speed={1.5}>
-        <h2 className="flex justify-end text-right text-color font-lexendDeca text-5xl font-bold pt-[15vh] px-[5%]">
+        <h2 className="flex justify-end text-right text-color font-lexendDeca text-5xl font-bold pt-[13vh] px-[5%]">
           Jumping Into Development
         </h2>
       </ParallaxLayer>

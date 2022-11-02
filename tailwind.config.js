@@ -22,6 +22,9 @@ module.exports = {
         lexendDeca: ["Lexend Deca", "sans-serif"],
         ubuntuMono: ["Ubuntu Mono", "monospace"],
       },
+      gridTemplateColumns: {
+        "blog-card": "2fr 3fr",
+      },
       flexGrow: {
         2: 2,
         3: 3,

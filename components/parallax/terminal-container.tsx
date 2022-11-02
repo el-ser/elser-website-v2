@@ -18,7 +18,7 @@ const TerminalContainer = ({
   return (
     <div
       id="terminal-container"
-      className="flex flex-col transition-theme bg-transparent dark:bg-black/20 backdrop-blur-sm rounded-2xl mx-[5%] shadow-2xl shadow-slate-70 dark:shadow-lg dark:shadow-slate-500 hover:scale-105 md:w-3/4"
+      className="flex flex-col transition-theme bg-transparent dark:bg-black/20 backdrop-blur-lg rounded-2xl mx-[5%] shadow-2xl shadow-slate-70 dark:shadow-lg dark:shadow-slate-500 hover:scale-105 md:w-3/4"
     >
       <div
         id="terminal-header"
