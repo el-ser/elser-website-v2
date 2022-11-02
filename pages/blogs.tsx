@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import BlogCard from "../components/blog-card";
+import PageTitle from "../components/page-title";
 
 import { useGetBlogsDataQuery, BlogDetails } from "../store/blogs/blogs.api";
 
 const Blogs: NextPage = () => {
   const blogsQueryResult = useGetBlogsDataQuery(null);
-  const { data, isLoading } = blogsQueryResult;
+  const { data, isLoading, isError } = blogsQueryResult;
   console.log(data);
   return (
     <div>
@@ -16,10 +17,8 @@ const Blogs: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col pt-[10vh] justify-center items-center gap-y-8">
-        <h1 className="text-color font-poppins text-5xl font-semibold pt-[5%]">
-          Blogs
-        </h1>
-        {isLoading ? (
+        <PageTitle>Blogs</PageTitle>
+        {isLoading || isError ? (
           <div>Still Loading</div>
         ) : (
           data.map((blog: BlogDetails) => {

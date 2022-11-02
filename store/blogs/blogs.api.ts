@@ -51,8 +51,8 @@ export const blogsApi = createApi({
       query: () => ({
         body: GET_USER_ARTICLES,
       }),
-      transformResponse: (baseQueryValue) => {
-        return baseQueryValue.user.publication.posts
+      transformResponse: (response) => {
+        return response.user.publication.posts
       }
     }),
   }),
