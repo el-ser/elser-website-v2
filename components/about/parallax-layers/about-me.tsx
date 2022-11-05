@@ -1,10 +1,16 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
 import Image from "next/image";
 
-import React, { MutableRefObject } from "react";
-import TerminalContainer from "./terminal-container";
+import React, { useState, MutableRefObject, useEffect } from "react";
+import TerminalContainer from "../../terminal-container";
 
 const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
+  const [dateState, setDateState] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => setDateState(new Date()), 1000);
+  }, []);
+
   return (
     <>
       {/** headphone icon */}
@@ -56,14 +62,28 @@ const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
           (ref as MutableRefObject<IParallax>).current?.scrollTo(2)
         }
       >
-        <TerminalContainer fileText="yarn init --aboutme">
-          My name is Manuel Serafin Bugarin but people usually call me Macky. I
-          graduated with a bachelor’s degree of Computer Science in Mapua
-          University. Similar to others, my exposure to computer was through
-          video games. Have you seen people playing LAN games in a local
-          computer rental shops? Yeah, I used to be one of those kids. As I grew
-          up, I developed interests to 🎸 music , 🎥 film making, and ✈️
-          travelling!
+        <TerminalContainer>
+          <>
+            {`Last login: ${dateState.toLocaleString("en-US", {
+              hour: "numeric",
+              minute: "numeric",
+              second: "numeric",
+              day: "numeric",
+              month: "long",
+              hour12: true,
+            })} `}
+            <br />
+            el-ser@MacBook ~ % yarn init --aboutme
+            <br />
+            <br />
+            My name is Manuel Serafin Bugarin but people usually call me Macky.
+            I graduated with a bachelor’s degree of Computer Science in Mapua
+            University. Similar to others, my exposure to computer was through
+            video games. Have you seen people playing LAN games in a local
+            computer rental shops? Yeah, I used to be one of those kids. As I
+            grew up, I developed interests to 🎸 music , 🎥 film making, and ✈️
+            travelling!
+          </>
         </TerminalContainer>
       </ParallaxLayer>
     </>

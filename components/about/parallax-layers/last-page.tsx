@@ -1,5 +1,5 @@
 import { IParallax, ParallaxLayer } from "@react-spring/parallax";
-import React, { MutableRefObject } from "react";
+import React, { MutableRefObject, useState, useEffect } from "react";
 import {
   FaAngleLeft,
   FaLinkedin,
@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 
 import Link from "next/link";
-import TerminalContainer from "./terminal-container";
+import TerminalContainer from "../../terminal-container";
 import { IconType } from "react-icons";
 
 type IconLink = {
@@ -42,6 +42,12 @@ const links: IconLink[] = [
 ];
 
 const LastPage = React.forwardRef<IParallax, {}>((_props, ref) => {
+  const [dateState, setDateState] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => setDateState(new Date()), 1000);
+  }, []);
+
   const iconClasses = "icon-size w-full hover:scale-105 duration-300";
   return (
     <>
@@ -53,12 +59,23 @@ const LastPage = React.forwardRef<IParallax, {}>((_props, ref) => {
         <h2 className="flex justify-end text-center text-color font-lexendDeca text-5xl font-bold pt-[13vh] px-[5%]">
           LET'S CONNECT!
         </h2>
-        <TerminalContainer textClass="text-start" fileText="yarn publish">
+        <TerminalContainer textClass="text-start">
           <>
-            Thank you for visiting my website! Feel free to reach out to me
-            through my LinkedIn or email{" "}
-            <span className="font-bold">elser.code@gmail.com</span>. Check out
-            my blogs and work!
+            {`Last login: ${dateState.toLocaleString("en-US", {
+              hour: "numeric",
+              minute: "numeric",
+              second: "numeric",
+              day: "numeric",
+              month: "long",
+              hour12: true,
+            })} `}
+            <br />
+            el-ser@MacBook ~ % yarn publish
+            <br />
+            <br />
+            So what's next? Checkout my blogs and experience! You may reach out
+            to me through my LinkedIn or email{" "}
+            <span className="font-bold">elser.code@gmail.com</span>
           </>
         </TerminalContainer>
 

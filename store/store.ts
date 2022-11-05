@@ -13,7 +13,7 @@ export const store = configureStore({
     [githubApi.reducerPath]: githubApi.reducer
   },
   middleware: (getDefaulMiddleware) =>
-    getDefaulMiddleware().concat(blogsApi.middleware),
+    getDefaulMiddleware().concat(blogsApi.middleware).concat(githubApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>

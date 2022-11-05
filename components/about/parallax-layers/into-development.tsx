@@ -1,10 +1,16 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
-import React, { MutableRefObject, RefObject } from "react";
+import React, { MutableRefObject, useState, useEffect } from "react";
 import Image from "next/image";
 
-import TerminalContainer from "./terminal-container";
+import TerminalContainer from "../../terminal-container";
 
 const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
+  const [dateState, setDateState] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => setDateState(new Date()), 1000);
+  }, []);
+
   return (
     <>
       {/* react icon */}
@@ -44,13 +50,27 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
           (ref as MutableRefObject<IParallax>).current?.scrollTo(4)
         }
       >
-        <TerminalContainer fileText="yarn add jumping-into --dev">
-          With 5 years experience in software testing, I finally decided to
-          pursue my passion for developing softwares. I took online courses on
-          Udemy and LinkedIn Learning, watched YouTube tutorials, wrote blogs
-          about the things I learned, and used my free time to put what I
-          learned into practice. After several months of learning and applying
-          for a developer position, I finally became a JavaScript Developer!
+        <TerminalContainer>
+          <>
+            {`Last login: ${dateState.toLocaleString("en-US", {
+              hour: "numeric",
+              minute: "numeric",
+              second: "numeric",
+              day: "numeric",
+              month: "long",
+              hour12: true,
+            })} `}
+            <br />
+            el-ser@MacBook ~ % yarn add jumping-into --dev
+            <br />
+            <br />
+            With 5 years experience in software testing, I finally decided to
+            pursue my passion for developing softwares. I took online courses on
+            Udemy and LinkedIn Learning, watched YouTube tutorials, wrote blogs
+            about the things I learned, and used my free time to put what I
+            learned into practice. After several months of learning and applying
+            for a developer position, I finally became a JavaScript Developer!
+          </>
         </TerminalContainer>
       </ParallaxLayer>
     </>

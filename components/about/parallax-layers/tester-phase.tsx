@@ -1,10 +1,16 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
-import React, { MutableRefObject } from "react";
+import React, { MutableRefObject, useState, useEffect } from "react";
 import Image from "next/image";
 
-import TerminalContainer from "./terminal-container";
+import TerminalContainer from "../../terminal-container";
 
 const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
+  const [dateState, setDateState] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => setDateState(new Date()), 1000);
+  }, []);
+
   return (
     <>
       {/* cucumber icon */}
@@ -47,15 +53,29 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
           (ref as MutableRefObject<IParallax>).current?.scrollTo(3)
         }
       >
-        <TerminalContainer fileText="yarn test">
-          Fast forward after graduating college in 2016, I started my career as
-          a Test Automation Engineer in a company called Deltek. I didn’t know
-          testing was a thing in software development so I invested my time
-          learning about software testing. As time goes by, new frameworks and
-          libraries became trend in software development such as ReactJS and
-          AngularJS. It offered better developer experience compared to the ones
-          I learned during college which led to asking myself “maybe I could be
-          a developer again?”.
+        <TerminalContainer>
+          <>
+            {`Last login: ${dateState.toLocaleString("en-US", {
+              hour: "numeric",
+              minute: "numeric",
+              second: "numeric",
+              day: "numeric",
+              month: "long",
+              hour12: true,
+            })} `}
+            <br />
+            el-ser@MacBook ~ % yarn test
+            <br />
+            <br />
+            Fast forward after graduating college in 2016, I started my career
+            as a Test Automation Engineer in a company called Deltek. I didn’t
+            know testing was a thing in software development so I invested my
+            time learning about software testing. As time goes by, new
+            frameworks and libraries became trend in software development such
+            as ReactJS and AngularJS. It offered better developer experience
+            compared to the ones I learned during college which led to asking
+            myself “maybe I could be a developer again?”.
+          </>
         </TerminalContainer>
       </ParallaxLayer>
     </>

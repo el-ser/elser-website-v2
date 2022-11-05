@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { BlogDetails } from "../store/blogs/blogs.api";
+import { BlogDetails } from "../../store/blogs/blogs.api";
 
 const BlogCard = ({ details }: { details: BlogDetails }) => {
   const { coverImage, title, brief, slug, dateAdded } = details;

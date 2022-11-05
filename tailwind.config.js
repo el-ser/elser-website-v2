@@ -31,9 +31,18 @@ module.exports = {
         4: 4,
       },
       animation: {
+        "click-me": "click-me 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "pulse-70": "pulse-70 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
+        "click-me": {
+          "0%, 100%": {
+            opacity: 0.0,
+          },
+          "50%": {
+            opacity: 0.1,
+          },
+        },
         "pulse-70": {
           "0%, 100%": {
             opacity: 1,

@@ -16,7 +16,7 @@ export const githubApi = createApi({
                 url: `user/repos`,
             }),
             transformResponse: (response: Array<any>) => {
-                return response.map((repo) => ({ name: repo.name, description: repo.description, url: repo.html_url }))
+                return response.map((repo) => ({ name: repo.name, description: repo.description, url: repo.html_url, id: repo.node_id }))
             }
         })
     })

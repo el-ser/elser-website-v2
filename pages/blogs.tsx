@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import BlogCard from "../components/blog-card";
+import BlogCard from "../components/blogs/blog-card";
 import PageTitle from "../components/page-title";
 
 import { useGetBlogsDataQuery, BlogDetails } from "../store/blogs/blogs.api";
