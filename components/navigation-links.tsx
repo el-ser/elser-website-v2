@@ -12,15 +12,17 @@ const NavigationLinks = ({ additionalClass }: { additionalClass?: string }) => {
     <>
       {navigationList.map((path, idx) => {
         return (
-          <Link key={idx} href={path.to}>
-            <a
-              className={`font-ubuntuMono no-underline transition-theme text-navy-blue-700 dark:text-smoke-600 ${additionalClass}`}
-              onClick={() => {
-                dispatch(setIsSideBarOpen());
-              }}
-            >
-              {path.text}
-            </a>
+          <Link key={idx} href={path.href}>
+            <>
+              <a
+                className={`font-ubuntuMono no-underline transition-theme text-navy-blue-700 dark:text-smoke-600 ${additionalClass}`}
+                onClick={() => {
+                  dispatch(setIsSideBarOpen());
+                }}
+              >
+                {path.text}
+              </a>
+            </>
           </Link>
         );
       })}

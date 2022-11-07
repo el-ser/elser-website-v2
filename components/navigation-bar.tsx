@@ -76,7 +76,7 @@ const NavigationBar = () => {
           />
         </div>
         <nav id="nav-links" className="hidden md:block">
-          <NavigationLinks additionalClass="px-8" />
+        <NavigationLinks additionalClass="px-8" />
         </nav>
       </div>
       {sidebarTransition((style, showSidebar) => {

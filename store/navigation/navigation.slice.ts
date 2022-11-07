@@ -1,8 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IconType } from "react-icons";
+import { FaGithub, FaReadme, FaFeatherAlt, FaLinkedin, FaCode } from "react-icons/fa"
+
+import HashnodeIcon from "../../components/hashnode-icon";
 
 export type NavItem = {
-    to: string;
+    href: string;
     text: string;
+    Icon: JSX.Element | IconType
 };
 
 type NavigationList = NavItem[];
@@ -17,17 +22,37 @@ type InitialState = {
 export const INITIAL_STATE: InitialState = {
     isSideBarOpen: false,
     navigationList: [{
-        to: "/",
+        href: "/",
         text: "About",
+        Icon: FaReadme
     },
     {
-        to: "/blogs",
+        href: "/blogs",
         text: "Blogs",
+        Icon: FaFeatherAlt
+
     },
     {
-        to: "/work",
+        href: "/work",
         text: "Work",
-    },],
+        Icon: FaCode
+    },
+    {
+        href: "https://github.com/el-ser",
+        text: "GitHub",
+        Icon: FaGithub
+    },
+    {
+        href: "https://www.linkedin.com/in/manuel-serafin-bugarin-636554144/",
+        text: "LinkedIn",
+        Icon: FaLinkedin
+    },
+    {
+        href: "https://elser.hashnode.dev/",
+        text: "Hashnode",
+        Icon: HashnodeIcon
+    }
+    ],
     useDarkMode: false
 }
 
