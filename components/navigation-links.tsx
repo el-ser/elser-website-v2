@@ -14,7 +14,7 @@ const NavigationLinks = ({ additionalClass }: { additionalClass?: string }) => {
         return (
           <Link key={idx} href={path.to}>
             <a
-              className={`font-poppins no-underline transition-theme text-navy-blue-700 dark:text-smoke-600 ${additionalClass}`}
+              className={`font-ubuntuMono no-underline transition-theme text-navy-blue-700 dark:text-smoke-600 ${additionalClass}`}
               onClick={() => {
                 dispatch(setIsSideBarOpen());
               }}

@@ -6,10 +6,10 @@ import { useRef } from "react";
 
 import CustomButton from "../components/custom-button";
 import TerminalContainer from "../components/terminal-container";
-import DeltekIcon from "../components/svg/deltek-icon";
-import MayaIcon from "../components/svg/maya-icon";
-import VertereIcon from "../components/svg/vertere-icon";
-import WorkPageOverlay from "../components/svg/work-page-overlay";
+import DeltekIcon from "../components/work/svg/deltek-icon";
+import MayaIcon from "../components/work/svg/maya-icon";
+import VertereIcon from "../components/work/svg/vertere-icon";
+import WorkPageOverlay from "../components/work/svg/work-page-overlay";
 import TimelineDates from "../components/work/parallax-layers/timeline-dates";
 
 import { useGetPublicRepositoriesQuery } from "../store/github/github.api";

@@ -41,7 +41,7 @@ const links: IconLink[] = [
   },
 ];
 
-const LastPage = React.forwardRef<IParallax, {}>((_props, ref) => {
+const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
 
   useEffect(() => {
@@ -114,4 +114,4 @@ const LastPage = React.forwardRef<IParallax, {}>((_props, ref) => {
   );
 });
 
-export default LastPage;
+export default LetsConnect;

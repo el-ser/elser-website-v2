@@ -3,6 +3,9 @@ import Image from "next/image";
 
 import React, { useState, MutableRefObject, useEffect } from "react";
 import TerminalContainer from "../../terminal-container";
+import HeadphonesIcon from "../svg/about-me/headphones-icon";
+import CameraIcon from "../svg/about-me/camera-icon";
+import TravelIcon from "../svg/about-me/travel-icons";
 
 const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
@@ -15,34 +18,22 @@ const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
     <>
       {/** headphone icon */}
       <ParallaxLayer offset={1.7} speed={2.5} className="mt-[15vh]">
-        <div className="relative w-40 h-40">
-          <Image
-            src="/assets/about-me/headphones.svg"
-            layout="fill"
-            className="opacity-60 rotate-45"
-          />
+        <div className="relative w-1/6 opacity-40 rotate-45">
+          <HeadphonesIcon />
         </div>
       </ParallaxLayer>
 
       {/** travel icon */}
       <ParallaxLayer offset={1.2} speed={1.5} className="mt-[60vh]">
-        <div className="relative w-96 h-96">
-          <Image
-            src="/assets/about-me/travel.svg"
-            layout="fill"
-            className="opacity-60"
-          />
+        <div className="relative w-1/2 opacity-40">
+          <TravelIcon />
         </div>
       </ParallaxLayer>
 
       {/** camera icon */}
-      <ParallaxLayer offset={1} speed={0.9} className="mt-[70vh]">
-        <div className="relative w-40 h-40">
-          <Image
-            src="/assets/about-me/camera.svg"
-            layout="fill"
-            className="opacity-60 -rotate-45"
-          />
+      <ParallaxLayer offset={1} speed={0.9} className="mt-[60vh]">
+        <div className="relative w-1/5 opacity-50 -rotate-45">
+          <CameraIcon />
         </div>
       </ParallaxLayer>
 

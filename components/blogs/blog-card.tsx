@@ -33,10 +33,10 @@ const BlogCard = ({ details }: { details: BlogDetails }) => {
               className="rounded-2xl"
             />
           </div>
-          <div className="text-color flex flex-col gap-2 transition-theme">
+          <div className="text-color flex flex-col gap-2 transition-theme font-ubuntuMono">
             <h2 className="font-lexendDeca font-bold text-3xl">{`${title}`}</h2>
-            <p className="font-poppins">{`(${dateDetails.month} ${dateDetails.date}, ${dateDetails.year})`}</p>
-            <p className="font-poppins text-lg text-justify">{brief}</p>
+            <p className="font-semibold">{`(${dateDetails.month} ${dateDetails.date}, ${dateDetails.year})`}</p>
+            <p className="text-lg text-justify">{brief}</p>
           </div>
         </div>
       </Link>

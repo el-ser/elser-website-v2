@@ -3,6 +3,9 @@ import React, { MutableRefObject, useState, useEffect } from "react";
 import Image from "next/image";
 
 import TerminalContainer from "../../terminal-container";
+import ReactIcon from "../svg/into-development/react-icon";
+import JavaScriptIcon from "../svg/into-development/javascript-icon";
+import NodejsIcon from "../svg/into-development/nodejs-icon";
 
 const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
@@ -15,22 +18,22 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
     <>
       {/* react icon */}
       <ParallaxLayer offset={3.1} speed={2} className="mt-[80vh]">
-        <div className="relative w-60 h-60 opacity-40">
-          <Image src="/assets/into-development/react.svg" layout="fill" />
+        <div className="relative w-1/2 opacity-40 ">
+          <ReactIcon />
         </div>
       </ParallaxLayer>
 
       {/* nodejs icon */}
       <ParallaxLayer offset={3.6} speed={1.3} className="mt-[70vh]">
-        <div className="relative w-48 h-48 opacity-30">
-          <Image src="/assets/into-development/nodejs.svg" layout="fill" />
+        <div className="relative w-2/5 opacity-30">
+          <NodejsIcon />
         </div>
       </ParallaxLayer>
 
       {/* javascript icon */}
       <ParallaxLayer offset={3} speed={2.5} className="mt-[15vh]">
-        <div className="relative w-60 h-60 opacity-40">
-          <Image src="/assets/into-development/js.svg" layout="fill" />
+        <div className="relative w-1/12 opacity-40">
+          <JavaScriptIcon />
         </div>
       </ParallaxLayer>
 

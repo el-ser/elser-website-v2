@@ -11,10 +11,12 @@ const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
     >
       <section
         id="hero-section"
-        className="flex flex-col justify-center h-full w-full px-8 md:gap-8 md:items-start md:justify-center"
+        className="flex flex-col justify-center h-full w-full px-8 md:gap-8 md:items-start"
       >
         <h1 id="hero-text-container" className="flex flex-col font-poppins">
-          <div className="text-2xl md:text-4xl">Hey there! I am</div>
+          <div className="text-2xl font-ubuntuMono font-bold md:text-4xl">
+            Hey there! I am
+          </div>
           <div className="font-bold text-7xl tracking-normal md:text-9xl ">
             Manu
             <span className="transition-theme text-accent-light dark:text-accent-dark">
@@ -24,10 +26,10 @@ const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
             <br />
             Bugarin
           </div>
-          <p className="text-2xl py-4 px-0 md:text-3xl">
+          <p className="text-2xl font-ubuntuMono font-bold py-4 px-0 md:text-3xl">
             Let's turn your ideas into reality!
           </p>
-          <div className="font-lexendDeca text-5xl font-bold animate-click-me">
+          <div className="font-ubuntuMono text-5xl font-bold animate-click-me">
             CLICK ME
           </div>
         </h1>

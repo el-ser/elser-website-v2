@@ -3,6 +3,9 @@ import React, { MutableRefObject, useState, useEffect } from "react";
 import Image from "next/image";
 
 import TerminalContainer from "../../terminal-container";
+import CucumberIcon from "../svg/tester-phase/cucumber-icon";
+import JestIcon from "../svg/tester-phase/jest-icon";
+import NightwatchIcon from "../svg/tester-phase/nightwatch-icon";
 
 const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
@@ -15,25 +18,22 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
     <>
       {/* cucumber icon */}
       <ParallaxLayer offset={2.1} speed={1.3} className="mt-[80vh]">
-        <div className="relative w-36 h-36 opacity-40">
-          <Image
-            src="/assets/tester-phase/cucumber-colored.svg"
-            layout="fill"
-          />
+        <div className="relative w-2/5 opacity-40">
+          <CucumberIcon />
         </div>
       </ParallaxLayer>
 
       {/* jest icon */}
       <ParallaxLayer offset={2.7} speed={3} className="mt-[70vh]">
-        <div className="relative w-48 h-48 opacity-30 rotate-12">
-          <Image src="/assets/tester-phase/jest.svg" layout="fill" />
+        <div className="relative w-1/2 opacity-30 rotate-12">
+          <JestIcon />
         </div>
       </ParallaxLayer>
 
       {/* nightwatch icon */}
       <ParallaxLayer offset={2.15} speed={1} className="mt-[7vh]">
-        <div className="relative w-28 h-28 opacity-40">
-          <Image src="/assets/tester-phase/nightwatchjs.svg" layout="fill" />
+        <div className="relative w-1/2 opacity-40">
+          <NightwatchIcon />
         </div>
       </ParallaxLayer>
 
