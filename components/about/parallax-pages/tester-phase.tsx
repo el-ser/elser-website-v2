@@ -24,36 +24,32 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
       </ParallaxLayer>
 
       {/* jest icon */}
-      <ParallaxLayer offset={2.7} speed={3} className="mt-[70vh]">
-        <div className="relative w-1/2 opacity-30 rotate-12">
+      <ParallaxLayer offset={2.7} speed={3} className="mt-[60vh]">
+        <div className="relative w-1/2 opacity-30 rotate-12 md:w-1/4">
           <JestIcon />
         </div>
       </ParallaxLayer>
 
       {/* nightwatch icon */}
-      <ParallaxLayer offset={2.15} speed={1} className="mt-[7vh]">
-        <div className="relative w-1/2 opacity-40">
+      <ParallaxLayer offset={2} speed={1} className="mt-[7vh]">
+        <div className="relative w-1/2 opacity-40 md:w-1/4">
           <NightwatchIcon />
         </div>
-      </ParallaxLayer>
-
-      {/* page 3 title */}
-      <ParallaxLayer offset={2} speed={1.5}>
-        <h2 className="flex justify-center text-color font-lexendDeca text-5xl font-bold pt-[15vh] px-[5%]">
-          Tester Phase
-        </h2>
       </ParallaxLayer>
 
       {/* page 3 description */}
       <ParallaxLayer
         offset={2}
         speed={2.5}
-        className="flex items-center justify-center font-poppins"
+        className="flex flex-col gap-8 items-center justify-center font-poppins"
         onClick={() =>
           (ref as MutableRefObject<IParallax>).current?.scrollTo(3)
         }
       >
-        <TerminalContainer>
+        <h2 className="flex justify-center text-color font-lexendDeca text-5xl font-bold pt-[5vh]">
+          Tester Phase
+        </h2>
+        <TerminalContainer hasCursor>
           <>
             {`Last login: ${dateState.toLocaleString("en-US", {
               hour: "numeric",
