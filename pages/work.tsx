@@ -131,52 +131,46 @@ const Work: NextPage = () => {
               item;
 
             return (
-              <>
-                <ParallaxLayer
-                  key={idx}
-                  offset={offset}
-                  onClick={() => {
-                    if (idx === timelineDetails.length - 1) {
-                      return parallaxRef.current.scrollTo(
-                        timelineDetails.length + 1
-                      );
-                    }
+              <ParallaxLayer
+                key={idx}
+                offset={offset}
+                onClick={() => {
+                  if (idx === timelineDetails.length - 1) {
                     return parallaxRef.current.scrollTo(
-                      timelineDetails[idx + 1].offset
+                      timelineDetails.length + 1
                     );
-                  }}
-                  className="flex flex-col justify-center items-center"
-                >
-                  {Logo}
-                  <TerminalContainer containerClass="w-3/4 mr-20 md:w-3/5">
-                    <>
-                      <span className="block text-xl">
-                        Company:{" "}
-                        <span className="font-bold">{companyName}</span>
-                      </span>
-                      <span className="block text-left">
-                        Role: <span className="font-semibold">{role}</span>
-                      </span>
-                      <span className="block text-left">
-                        {description.map((txt, idx) => (
+                  }
+                  return parallaxRef.current.scrollTo(
+                    timelineDetails[idx + 1].offset
+                  );
+                }}
+                className="flex flex-col justify-center items-center"
+              >
+                {Logo}
+                <TerminalContainer containerClass="w-3/4 mr-20 md:w-3/5">
+                  <>
+                    <span className="block text-xl">
+                      Company: <span className="font-bold">{companyName}</span>
+                    </span>
+                    <span className="block text-left">
+                      Role: <span className="font-semibold">{role}</span>
+                    </span>
+                    <span className="block text-left">
+                      {description.map((txt, idx) => (
+                        <span key={idx} className="block">{`> ${txt}`}</span>
+                      ))}
+                    </span>
+                    <span className="block font-bold">Tech Used:</span>{" "}
+                    <span className="grid grid-cols-2 text-left">
+                      {techStack.map((txt, idx) => {
+                        return (
                           <span key={idx} className="block">{`> ${txt}`}</span>
-                        ))}
-                      </span>
-                      <span className="block font-bold">Tech Used:</span>{" "}
-                      <span className="grid grid-cols-2 text-left">
-                        {techStack.map((txt, idx) => {
-                          return (
-                            <span
-                              key={idx}
-                              className="block"
-                            >{`> ${txt}`}</span>
-                          );
-                        })}
-                      </span>
-                    </>
-                  </TerminalContainer>
-                </ParallaxLayer>
-              </>
+                        );
+                      })}
+                    </span>
+                  </>
+                </TerminalContainer>
+              </ParallaxLayer>
             );
           })}
 
@@ -214,38 +208,6 @@ const Work: NextPage = () => {
             </CustomButton>
           </ParallaxLayer>
         </Parallax>
-
-        {/* <main className="flex flex-col pt-[10vh] justify-center items-center gap-y-8"> */}
-
-        {/* <PageTitle>Experience</PageTitle>
-        <section
-          id="work-timeline"
-          className="grid grid-cols-5 w-full px-4 place-items-center"
-        >
-          {timelineDetails.map((item, idx) => {
-            const inverted = Boolean(idx % 2);
-            return <TimelineItem details={item} inverted={inverted} />;
-          })}
-        </section> */}
-        {/* <section
-          id="github-repositories"
-          className="grid grid-cols-2 gap-8 w-full px-8 place-items-center"
-        >
-          {isLoading
-            ? "Still Loading"
-            : data?.map((repo) => {
-                return (
-                  <Link key={repo.id} href={repo.url}>
-                    <div
-                      id="pill"
-                      className="inverted-text-color h-20 w-4/5 bg-navy-blue-600 rounded-xl"
-                    >
-                      <span>{repo.name}</span>
-                    </div>
-                  </Link>
-                );
-              })}
-        </section> */}
       </main>
     </div>
   );

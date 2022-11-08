@@ -28,6 +28,9 @@
   .icon-size {
     @apply w-10 h-10 md:w-14 md:h-14
   }
+  .skeleton-bg {
+    @apply bg-navy-blue-700/20 dark:bg-smoke-600/40 
+  }
 }
 
 html,

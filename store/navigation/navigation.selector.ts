@@ -8,4 +8,9 @@ export const selectIsSideBarOpen = createSelector(selectNavigationSlice, (state 
 
 export const selectNavigationList = createSelector(selectNavigationSlice, (state => state.navigationList));
 
+export const selectExternalLinks = createSelector(selectNavigationList, (state =>
+    state.filter((link) => link.optionalText)))
+
+export const selectInternalLinks = createSelector(selectNavigationList, (state => state.filter((link) => !link.optionalText)))
+
 export const selectUseDarkMode = createSelector(selectNavigationSlice, (state => state.useDarkMode))
