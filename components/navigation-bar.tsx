@@ -49,23 +49,30 @@ const NavigationBar = () => {
         className="fixed z-40 w-full flex justify-between items-center h-[10vh] p-4 transition-theme navigation-bg"
       >
         <Link href="/">
-          <a id="nav-icon" className="grow">
-            <Image src="/logo.svg" alt="logo" width="150" height="150" />
+          <a id="nav-icon" className="relative grow w-1/2 h-full">
+            <Image
+              src="/logo.svg"
+              alt="logo"
+              priority
+              layout="fill"
+              objectFit="contain"
+              objectPosition="left"
+            />
           </a>
         </Link>
 
         <div
           id="nav-menu"
-          className="flex justify-end items-center grow-3 gap-x-4 right-4 w-12 h-full"
+          className="flex justify-end items-center grow-3 gap-x-4  w-12 h-full"
         >
           <span
             onClick={handleDarkMode}
-            className="flex items-center h-full w-16"
+            className="flex items-center h-full w-16 md:mr-8"
           >
             {useDarkMode ? (
-              <FaMoon className="h-2/5 w-full cursor-pointer" />
+              <FaMoon className="h-1/2 w-full cursor-pointer" />
             ) : (
-              <FaSun className="h-2/5 w-full cursor-pointer" />
+              <FaSun className="h-1/2 w-full cursor-pointer" />
             )}
           </span>
           <FiAlignRight
@@ -75,8 +82,11 @@ const NavigationBar = () => {
             }}
           />
         </div>
-        <nav id="nav-links" className="hidden md:block">
-        <NavigationLinks additionalClass="px-8" />
+        <nav id="nav-links" className="hidden md:flex md:gap-8">
+          <NavigationLinks
+            internalOptions={{ showIcon: false }}
+            externalOptions={{ showText: false }}
+          />
         </nav>
       </div>
       {sidebarTransition((style, showSidebar) => {

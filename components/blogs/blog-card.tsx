@@ -27,9 +27,7 @@ const BlogCard = ({ details }: { details: BlogDetails }) => {
               blurDataURL={coverImage}
               layout="fill"
               quality={100}
-              style={{
-                objectFit: "contain",
-              }}
+              objectFit="contain"
               className="rounded-2xl"
             />
           </div>

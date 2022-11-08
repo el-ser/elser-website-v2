@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import TerminalContainer from "../../terminal-container";
 import { IconType } from "react-icons";
+import Footer from "../../footer";
 
 type IconLink = {
   href: string;
@@ -59,7 +60,7 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
         <h2 className="flex justify-end text-center text-color font-lexendDeca text-5xl font-bold pt-[13vh] px-[5%]">
           LET'S CONNECT!
         </h2>
-        <TerminalContainer textClass="text-start">
+        <TerminalContainer textClass="text-start" hasCursor>
           <>
             {`Last login: ${dateState.toLocaleString("en-US", {
               hour: "numeric",
@@ -109,6 +110,14 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
         }}
       >
         <FaAngleLeft className="h-full w-auto cursor-pointer animate-pulse-70" />
+      </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={4}
+        style={{ zIndex: -30 }}
+        className="flex items-end justify-center mb-8"
+      >
+        <Footer />
       </ParallaxLayer>
     </>
   );

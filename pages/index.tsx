@@ -7,7 +7,7 @@ import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import AboutMe from "../components/about/parallax-pages/about-me";
 import TesterPhase from "../components/about/parallax-pages/tester-phase";
 import IntoDevelopment from "../components/about/parallax-pages/into-development";
-import LastPage from "../components/about/parallax-pages/lets-connect";
+import LetsConnect from "../components/about/parallax-pages/lets-connect";
 import HeroPage from "../components/about/parallax-pages/hero-page";
 
 const Home: NextPage = () => {
@@ -26,8 +26,6 @@ const Home: NextPage = () => {
           config={config.slow}
           horizontal
         >
-          <HeroPage ref={parallaxRef} />
-
           {/* page 2 - 4 background */}
           <ParallaxLayer
             sticky={{ start: 1, end: 3 }}
@@ -38,11 +36,11 @@ const Home: NextPage = () => {
             }}
           />
 
+          <HeroPage ref={parallaxRef} />
           <AboutMe ref={parallaxRef} />
           <TesterPhase ref={parallaxRef} />
           <IntoDevelopment ref={parallaxRef} />
-
-          <LastPage ref={parallaxRef} />
+          <LetsConnect ref={parallaxRef} />
         </Parallax>
       </main>
     </>
