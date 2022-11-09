@@ -46,10 +46,14 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
           (ref as MutableRefObject<IParallax>).current?.scrollTo(4)
         }
       >
-        <h2 className="flex justify-end text-center text-color font-lexendDeca text-5xl font-bold pt-[5vh]">
+        <h2 className="text-center text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
           Jumping Into Development
         </h2>
-        <TerminalContainer hasCursor>
+        <TerminalContainer
+          hasCursor
+          headerText="Into Development"
+          headerClass="md:hidden"
+        >
           <>
             {`Last login: ${dateState.toLocaleString("en-US", {
               hour: "numeric",

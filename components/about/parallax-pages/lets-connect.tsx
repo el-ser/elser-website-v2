@@ -79,7 +79,6 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
             <span className="font-bold">elser.code@gmail.com</span>
           </>
         </TerminalContainer>
-
         <div
           id="links"
           className="flex justify-center items-center gap-x-8 text-color font-lexendDeca md:gap-x-16"
@@ -94,6 +93,9 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
               </Link>
             );
           })}
+        </div>
+        <div className="mt-10">
+          <Footer />
         </div>
       </ParallaxLayer>
 
@@ -110,14 +112,6 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
         }}
       >
         <FaAngleLeft className="h-full w-auto cursor-pointer animate-pulse-70" />
-      </ParallaxLayer>
-
-      <ParallaxLayer
-        offset={4}
-        style={{ zIndex: -30 }}
-        className="flex items-end justify-center mb-8"
-      >
-        <Footer />
       </ParallaxLayer>
     </>
   );

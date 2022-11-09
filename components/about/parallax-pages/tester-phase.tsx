@@ -46,10 +46,14 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
           (ref as MutableRefObject<IParallax>).current?.scrollTo(3)
         }
       >
-        <h2 className="flex justify-center text-color font-lexendDeca text-5xl font-bold pt-[5vh]">
+        <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
           Tester Phase
         </h2>
-        <TerminalContainer hasCursor>
+        <TerminalContainer
+          hasCursor
+          headerText="Tester Phase"
+          headerClass="md:hidden"
+        >
           <>
             {`Last login: ${dateState.toLocaleString("en-US", {
               hour: "numeric",
