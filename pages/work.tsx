@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useRef } from "react";
+import { config } from "react-spring";
 
 import CustomButton from "../components/custom-button";
 import TerminalContainer from "../components/terminal-container";
@@ -72,9 +73,8 @@ const timelineDetails: TimelineItemType[] = [
 ];
 
 const Work: NextPage = () => {
-  const { data, isLoading, isError } = useGetPublicRepositoriesQuery(null);
+  // const { data, isLoading, isError } = useGetPublicRepositoriesQuery(null);
   const timelinePages = timelineDetails.length;
-  // console.log(data);
   const parallaxRef = useRef<IParallax>(null!);
 
   return (
@@ -85,7 +85,11 @@ const Work: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Parallax ref={parallaxRef} pages={timelinePages + 2}>
+        <Parallax
+          ref={parallaxRef}
+          pages={timelinePages + 2}
+          config={config.gentle}
+        >
           {/** page title */}
           <ParallaxLayer
             offset={0}
@@ -123,7 +127,7 @@ const Work: NextPage = () => {
             <WorkPageOverlay />
           </ParallaxLayer>
 
-          <TimelineDates timelineDetails={timelineDetails} />
+          <TimelineDates />
 
           {/* work history layers */}
           {timelineDetails.map((item, idx) => {

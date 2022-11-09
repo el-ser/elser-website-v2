@@ -46,10 +46,14 @@ const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
           (ref as MutableRefObject<IParallax>).current?.scrollTo(2)
         }
       >
-        <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[5vh]">
+        <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
           About Me
         </h2>
-        <TerminalContainer hasCursor>
+        <TerminalContainer
+          hasCursor
+          headerText="About Me"
+          headerClass="md:hidden"
+        >
           <>
             {`Last login: ${dateState.toLocaleString("en-US", {
               hour: "numeric",
