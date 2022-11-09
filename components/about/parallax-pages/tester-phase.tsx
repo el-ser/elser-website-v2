@@ -1,6 +1,6 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
 import React, { MutableRefObject, useState, useEffect } from "react";
-import Image from "next/image";
+import { GrTest } from "react-icons/gr";
 
 import TerminalContainer from "../../terminal-container";
 import CucumberIcon from "../svg/tester-phase/cucumber-icon";
@@ -16,22 +16,29 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
 
   return (
     <>
+      {/* test tube icon */}
+      <ParallaxLayer offset={2.5} speed={0.1} style={{ zIndex: -10 }}>
+        <div className="relative mt-[7vh]">
+          <GrTest className="w-60 h-auto opacity-30 transition-theme" />
+        </div>
+      </ParallaxLayer>
+
       {/* cucumber icon */}
-      <ParallaxLayer offset={2.1} speed={1.3} className="mt-[80vh]">
+      <ParallaxLayer offset={2.1} speed={0.9} className="mt-[80vh]">
         <div className="relative w-2/5 opacity-40">
           <CucumberIcon />
         </div>
       </ParallaxLayer>
 
       {/* jest icon */}
-      <ParallaxLayer offset={2.7} speed={3} className="mt-[60vh]">
+      <ParallaxLayer offset={2.7} speed={0.5} className="mt-[60vh]">
         <div className="relative w-1/2 opacity-30 rotate-12 md:w-1/4">
           <JestIcon />
         </div>
       </ParallaxLayer>
 
       {/* nightwatch icon */}
-      <ParallaxLayer offset={2} speed={1} className="mt-[7vh]">
+      <ParallaxLayer offset={2} speed={0.2} className="mt-[7vh]">
         <div className="relative w-1/2 opacity-40 md:w-1/4">
           <NightwatchIcon />
         </div>
@@ -40,7 +47,7 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
       {/* page 3 description */}
       <ParallaxLayer
         offset={2}
-        speed={2.5}
+        speed={1.3}
         className="flex flex-col gap-8 items-center justify-center font-poppins"
         onClick={() =>
           (ref as MutableRefObject<IParallax>).current?.scrollTo(3)

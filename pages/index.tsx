@@ -38,6 +38,7 @@ const Home: NextPage = () => {
 
           <HeroPage ref={parallaxRef} />
           <AboutMe ref={parallaxRef} />
+
           <TesterPhase ref={parallaxRef} />
           <IntoDevelopment ref={parallaxRef} />
           <LetsConnect ref={parallaxRef} />
