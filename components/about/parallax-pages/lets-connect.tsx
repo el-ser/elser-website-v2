@@ -94,9 +94,9 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
             );
           })}
         </div>
-        <div className="mt-10">
-          <Footer />
-        </div>
+        {/* <div className="mt-10"> */}
+        <Footer />
+        {/* </div> */}
       </ParallaxLayer>
 
       <ParallaxLayer

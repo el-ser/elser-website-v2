@@ -17,9 +17,9 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
   return (
     <>
       {/* next js icon */}
-      <ParallaxLayer offset={3.8} speed={0.1} style={{ zIndex: -10 }}>
+      <ParallaxLayer offset={3.5} speed={0.1} style={{ zIndex: -10 }}>
         <div className="relative mt-[30vh]">
-          <SiNextdotjs className="transition-theme w-60 h-auto opacity-30" />
+          <SiNextdotjs className="transition-theme w-52 h-auto opacity-30 md:w-80" />
         </div>
       </ParallaxLayer>
       {/* react icon */}
