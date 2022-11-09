@@ -1,12 +1,6 @@
 import { ParallaxLayer } from "@react-spring/parallax";
 
-import type { TimelineItemType } from "../../../pages/work";
-
-const TimelineDates = ({
-  timelineDetails,
-}: {
-  timelineDetails: TimelineItemType[];
-}) => {
+const TimelineDates = () => {
   return (
     <>
       {/* timeline */}
