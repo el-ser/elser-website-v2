@@ -127,7 +127,7 @@ const Work: NextPage = () => {
             <WorkPageOverlay />
           </ParallaxLayer>
 
-          <TimelineDates timelineDetails={timelineDetails} />
+          <TimelineDates />
 
           {/* work history layers */}
           {timelineDetails.map((item, idx) => {
