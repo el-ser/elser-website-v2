@@ -40,7 +40,7 @@ module.exports = {
             opacity: 0.0,
           },
           "50%": {
-            opacity: 0.1,
+            opacity: 0.5,
           },
         },
         "pulse-70": {
