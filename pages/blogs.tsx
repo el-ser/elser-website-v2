@@ -16,10 +16,6 @@ const Blogs: NextPage = () => {
     <div>
       <Head>
         <title>Blogs / el-ser</title>
-        <meta
-          name="keywords"
-          content="blogs, elser blogs, el-ser blogs, test automation blogs, javascript blogs, web development, gitlab ci, ci, test automation, reactjs, nextjs, qe, dev"
-        />
       </Head>
       <main className="flex flex-col pt-[10vh] justify-center items-center gap-y-8">
         <PageTitle>Blogs</PageTitle>

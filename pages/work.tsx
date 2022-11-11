@@ -81,10 +81,6 @@ const Work: NextPage = () => {
     <div>
       <Head>
         <title>Experience / el-ser</title>
-        <meta
-          name="keywords"
-          content="work history, elser, elser exprience, deltek, paymaya, maya, vertere, metrobank"
-        />
       </Head>
       <main>
         <Parallax
