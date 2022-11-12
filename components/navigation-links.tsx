@@ -29,7 +29,7 @@ const NavigationLinks = ({
   const internalLinks = useAppSelector(selectInternalLinks);
   const externalLinks = useAppSelector(selectExternalLinks);
   const linkClasses =
-    "flex gap-8 items-center text-color text-xl font-ubuntuMono no-underline transition-theme text-navy-blue-700 dark:text-smoke-600 hover:scale-110";
+    "flex gap-8 items-center text-color text-xl font-ubuntuMono no-underline transition-theme text-navy-blue-700 dark:text-smoke-600 hover:scale-110 cursor-pointer";
 
   return (
     <>

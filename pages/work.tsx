@@ -65,7 +65,10 @@ const timelineDetails: TimelineItemType[] = [
   {
     companyName: "Vertere Global Solutions",
     role: "Programmer Analyst S3",
-    description: ["Maintained codes"],
+    description: [
+      "Developed new features with react-boilerplate",
+      "Investigated ",
+    ],
     techStack: ["React Boilerplate", "NGINX", "Tailwindcss", "Nextjs"],
     offset: 3,
     Logo: <VertereIcon className="h-auto w-3/4 mr-16 md:w-2/5" />,

@@ -27,7 +27,11 @@ const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
             Bugarin
           </div>
           <p className="text-2xl font-ubuntuMono font-bold py-4 px-0 md:text-3xl">
-            Let's turn your ideas into reality!
+            A{" "}
+            <span className="text-accent-light dark:text-accent-dark">
+              software developer
+            </span>
+            , turning ideas to reality
           </p>
           <div className="font-ubuntuMono text-5xl font-bold animate-click-me">
             CLICK ME
