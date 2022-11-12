@@ -61,7 +61,7 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
           headerText="Tester Phase"
           headerClass="md:hidden"
         >
-          <>
+          <p>
             {`Last login: ${dateState.toLocaleString("en-US", {
               hour: "numeric",
               minute: "numeric",
@@ -82,7 +82,7 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
             as ReactJS and AngularJS. It offered better developer experience
             compared to the ones I learned during college which led to asking
             myself “maybe I could be a developer again?”.
-          </>
+          </p>
         </TerminalContainer>
       </ParallaxLayer>
     </>

@@ -66,10 +66,16 @@ const timelineDetails: TimelineItemType[] = [
     companyName: "Vertere Global Solutions",
     role: "Programmer Analyst S3",
     description: [
-      "Developed new features with react-boilerplate",
-      "Investigated ",
+      "Developed and maintained features for Metrobank's back office application",
+      "Investigated production issues through NGINX logs and service logs",
     ],
-    techStack: ["React Boilerplate", "NGINX", "Tailwindcss", "Nextjs"],
+    techStack: [
+      "React Boilerplate",
+      "NGINX",
+      "Tailwindcss",
+      "Nextjs",
+      "Loopback 4",
+    ],
     offset: 3,
     Logo: <VertereIcon className="h-auto w-3/4 mr-16 md:w-2/5" />,
   },
@@ -166,13 +172,13 @@ const Work: NextPage = () => {
                       ))}
                     </span>
                     <span className="block font-bold">Tech Used:</span>{" "}
-                    <span className="grid grid-cols-2 text-left">
+                    <ul className="grid grid-cols-2 text-left">
                       {techStack.map((txt, idx) => {
                         return (
-                          <span key={idx} className="block">{`> ${txt}`}</span>
+                          <li key={idx}>{`> ${txt}`}</li>
                         );
                       })}
-                    </span>
+                    </ul>
                   </>
                 </TerminalContainer>
               </ParallaxLayer>
