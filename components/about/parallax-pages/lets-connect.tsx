@@ -49,7 +49,6 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
     setInterval(() => setDateState(new Date()), 1000);
   }, []);
 
-  const iconClasses = "icon-size w-full hover:scale-105 duration-300";
   return (
     <>
       <ParallaxLayer
@@ -86,15 +85,14 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
           {links.map(({ href, text, Icon }, idx) => {
             return (
               <Link href={href} key={idx}>
-                <span className="cursor-pointer">
-                  <Icon className={iconClasses} />
+                <span className="cursor-pointer flex flex-col items-center">
+                  <Icon className="icon-size w-full hover:scale-105 duration-300" />
                   <span>{text}</span>
                 </span>
               </Link>
             );
           })}
         </div>
-        {/* <div className="mt-10"> */}
         <Footer />
         {/* </div> */}
       </ParallaxLayer>

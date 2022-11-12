@@ -22,14 +22,14 @@ const TerminalContainer = ({
     >
       <TerminalHeader title={headerText} textClass={headerClass} />
 
-      <p
+      <div
         className={`transition-theme text-color w-full font-ubuntuMono text-justify px-[1%] text-md md:text-xl ${textClass}`}
       >
         {children}
         {hasCursor && (
           <span className="w-2 h-4 bg-smoke-600 animate-ping">{`_`}</span>
         )}
-      </p>
+      </div>
     </div>
   );
 };

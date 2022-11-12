@@ -54,7 +54,7 @@ const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
           headerText="About Me"
           headerClass="md:hidden"
         >
-          <>
+          <p>
             {`Last login: ${dateState.toLocaleString("en-US", {
               hour: "numeric",
               minute: "numeric",
@@ -74,7 +74,7 @@ const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
             computer rental shops? Yeah, I used to be one of those kids. As I
             grew up, I developed interests to 🎸 music , 🎥 film making, and ✈️
             travelling!
-          </>
+          </p>
         </TerminalContainer>
       </ParallaxLayer>
     </>

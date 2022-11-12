@@ -18,7 +18,7 @@ const BlogCard = ({ details }: { details: BlogDetails }) => {
     <>
       <hr className="border-[0.5px] rounded-full border-navy-blue-800/30 dark:border-smoke-600/30 w-[90%]" />
       <Link href={`https://elser.hashnode.dev/${slug}`}>
-        <div className="grid grid-cols-1 mx-4 mt-4 gap-8 group/blog cursor-pointer items-center md:grid-cols-blog-card md:mx-12">
+        <div className="grid grid-cols-1 mx-4 mt-4 gap-8 group/blog cursor-pointer items-center md:grid-cols-blog-card md:w-[85%]">
           <div className="relative h-60 w-full transition-theme group-hover/blog:scale-105">
             <Image
               src={coverImage}

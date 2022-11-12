@@ -60,7 +60,7 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
           headerText="Into Development"
           headerClass="md:hidden"
         >
-          <>
+          <p>
             {`Last login: ${dateState.toLocaleString("en-US", {
               hour: "numeric",
               minute: "numeric",
@@ -79,7 +79,7 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
             about the things I learned, and used my free time to put what I
             learned into practice. After several months of learning and applying
             for a developer position, I finally became a JavaScript Developer!
-          </>
+          </p>
         </TerminalContainer>
       </ParallaxLayer>
     </>
