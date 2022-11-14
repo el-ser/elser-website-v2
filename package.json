@@ -1,6 +1,9 @@
 {
   "name": "elser-website-v2",
-  "version": "0.1.0",
+  "description": "Manuel Serafin B. Bugarin personal/blog website",
+  "author": "Manuel Serafin B. Bugarin <elser.code@gmail.com>",
+  "license": "MIT",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
