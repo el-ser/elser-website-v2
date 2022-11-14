@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# elser-website-v2 - Personal/Blog Website
 
-## Getting Started
+![License](https://img.shields.io/github/license/el-ser/elser-website-v2?style=plastic) ![Package Version](https://img.shields.io/github/package-json/v/el-ser/elser-website-v2?style=plastic) ![Repo Size](https://img.shields.io/github/repo-size/el-ser/elser-website-v2) ![Website Status](https://img.shields.io/website?down_color=red&down_message=offline&style=plastic&up_color=green&up_message=online&url=https%3A%2F%2Felser.info%2F)
 
-First, run the development server:
+You found my project! This project aims to showcase my developer skills and experience throughout my entire career. It also contains the blogs that I create from time to time which is hosted in [Hashnode](https://elser.hashnode.dev/). 
 
+I intentionally made this repository public hoping that it would help others in creating their own website. In case you don't know, I started my career as a Software Development Engineer in Test and has now switched to a full time developer. So for those of you who are planning to be Software Developer or Software Engineer, if I can do it so can you!
+
+## 📋 What I Used
+- [Next.js](https://nextjs.org/) - React front-end framework 
+- [Redux Toolkit](https://redux-toolkit.js.org/) - State management
+- [tailwindcss](https://tailwindcss.com/) - CSS framework
+- [Vercel](https://vercel.com/) - Deployment platform
+- [react-spring](https://react-spring.dev/) - Animation Framework
+  
+## 🛠 How to Install
+Assuming that you've already cloned or forked this, you can install this project by running:
 ```bash
-npm run dev
+# If you are using yarn
+yarn install
 # or
-yarn dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the project to your machine (localhost:3000)
+```bash
+yarn dev
+# or
+npm run dev
+```
+## 💅🏻 Colors and Fonts
+### Fonts
+- Ubuntu Mono
+- Lexend Deca
+- Poppins
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Colors
+- Navy Blue
+  - `#415a77`
+  - `#1B263B`
+  - `#182437`
+  - `#0D1B2A`
+- Smoke White
+  - `#E0E1DD`
+  - `#C6CCD0`
+- Accent Colors
+  - `#0D9488`
+  - `#14B8A6`
