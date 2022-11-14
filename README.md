@@ -1,6 +1,6 @@
 # elser-website-v2 - Personal/Blog Website
 
-![License](https://img.shields.io/github/license/el-ser/elser-website-v2?style=plastic) ![Package Version](https://img.shields.io/github/package-json/v/el-ser/elser-website-v2?style=plastic) ![Repo Size](https://img.shields.io/github/repo-size/el-ser/elser-website-v2) ![Website Status](https://img.shields.io/website?down_color=red&down_message=offline&style=plastic&up_color=green&up_message=online&url=https%3A%2F%2Felser.info%2F)
+![License](https://img.shields.io/github/license/el-ser/elser-website-v2?label=license&style=plastic) ![Package Version](https://img.shields.io/github/package-json/v/el-ser/elser-website-v2?style=plastic) ![Repo Size](https://img.shields.io/github/repo-size/el-ser/elser-website-v2) ![Website Status](https://img.shields.io/website?down_color=red&down_message=offline&style=plastic&up_color=green&up_message=online&url=https%3A%2F%2Felser.info%2F)
 
 You found my project! This project aims to showcase my developer skills and experience throughout my entire career. It also contains the blogs that I create from time to time which is hosted in [Hashnode](https://elser.hashnode.dev/). 
 
