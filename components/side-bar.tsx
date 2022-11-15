@@ -12,6 +12,7 @@ const SideBar = ({ animationStyle }: { animationStyle: NavbarStyleType }) => {
 
   return (
     <animated.aside
+      role="complementary"
       style={animationStyle}
       className={`fixed flex flex-col z-50 h-full w-full navigation-bg top-0 right-0 md:hidden`}
     >
@@ -22,7 +23,7 @@ const SideBar = ({ animationStyle }: { animationStyle: NavbarStyleType }) => {
       />
       <nav
         id="nav-links"
-      className="flex flex-col gap-8 h-full justify-evenly items-center"
+        className="flex flex-col gap-8 h-full justify-evenly items-center"
       >
         <NavigationLinks
           internalOptions={{ showIcon: true, className: "text-4xl" }}
