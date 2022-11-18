@@ -131,7 +131,9 @@ const Work: NextPage = () => {
               zIndex: -30,
             }}
           >
-            <WorkPageOverlay />
+            <div className="relative h-screen w-screen">
+              <WorkPageOverlay />
+            </div>
           </ParallaxLayer>
 
           <TimelineDates />
@@ -174,9 +176,7 @@ const Work: NextPage = () => {
                     <span className="block font-bold">Tech Used:</span>{" "}
                     <ul className="grid grid-cols-2 text-left">
                       {techStack.map((txt, idx) => {
-                        return (
-                          <li key={idx}>{`> ${txt}`}</li>
-                        );
+                        return <li key={idx}>{`> ${txt}`}</li>;
                       })}
                     </ul>
                   </>

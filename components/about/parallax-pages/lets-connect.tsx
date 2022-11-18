@@ -51,50 +51,47 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
 
   return (
     <>
-      <ParallaxLayer
-        offset={4}
-        speed={1.5}
-        className="flex flex-col items-center justify-center gap-y-8 text-color"
-      >
-        <h2 className="flex justify-end text-center text-color font-lexendDeca text-5xl font-bold pt-[13vh] px-[5%]">
-          LET'S CONNECT!
-        </h2>
-        <TerminalContainer textClass="text-start" hasCursor>
-          <>
-            {`Last login: ${dateState.toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              second: "numeric",
-              day: "numeric",
-              month: "long",
-              hour12: true,
-            })} `}
-            <br />
-            el-ser@MacBook ~ % yarn publish
-            <br />
-            <br />
-            So what's next? Checkout my blogs and experience! You may reach out
-            to me through my LinkedIn or email{" "}
-            <span className="font-bold">elser.code@gmail.com</span>
-          </>
-        </TerminalContainer>
-        <div
-          id="links"
-          className="flex justify-center items-center gap-x-8 text-color font-lexendDeca md:gap-x-16"
-        >
-          {links.map(({ href, text, Icon }, idx) => {
-            return (
-              <Link href={href} key={idx}>
-                <span className="cursor-pointer flex flex-col items-center">
-                  <Icon className="icon-size w-full hover:scale-105 duration-300" />
-                  <span>{text}</span>
-                </span>
-              </Link>
-            );
-          })}
-        </div>
-        <Footer />
-        {/* </div> */}
+      <ParallaxLayer offset={4} speed={1.5}>
+        <section className="h-full flex flex-col items-center justify-center gap-y-8 text-color">
+          <h2 className="flex justify-end text-center text-color font-lexendDeca text-5xl font-bold pt-[13vh] px-[5%]">
+            LET'S CONNECT!
+          </h2>
+          <TerminalContainer textClass="text-start" hasCursor>
+            <>
+              {`Last login: ${dateState.toLocaleString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                second: "numeric",
+                day: "numeric",
+                month: "long",
+                hour12: true,
+              })} `}
+              <br />
+              el-ser@MacBook ~ % yarn publish
+              <br />
+              <br />
+              So what's next? Checkout my blogs and experience! You may reach
+              out to me through my LinkedIn or email{" "}
+              <span className="font-bold">elser.code@gmail.com</span>
+            </>
+          </TerminalContainer>
+          <div
+            id="links"
+            className="flex justify-center items-center gap-x-8 text-color font-lexendDeca md:gap-x-16"
+          >
+            {links.map(({ href, text, Icon }, idx) => {
+              return (
+                <Link href={href} key={idx}>
+                  <span className="cursor-pointer flex flex-col items-center">
+                    <Icon className="icon-size w-full hover:scale-105 duration-300" />
+                    <span>{text}</span>
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+          <Footer />
+        </section>
       </ParallaxLayer>
 
       <ParallaxLayer

@@ -36,8 +36,8 @@ export const INITIAL_STATE: InitialState = {
 
     },
     {
-        href: "/work",
-        text: "Work",
+        href: "/experience",
+        text: "Experience",
         optionalText: false,
         Icon: FaCode
     },
