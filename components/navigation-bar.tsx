@@ -44,7 +44,7 @@ const NavigationBar = () => {
 
   return (
     <>
-      <div
+      <header
         id="nav-container"
         className="fixed z-40 w-full flex justify-between items-center h-[10vh] p-4 transition-theme navigation-bg"
       >
@@ -88,7 +88,7 @@ const NavigationBar = () => {
             externalOptions={{ showText: false }}
           />
         </nav>
-      </div>
+      </header>
       {sidebarTransition((style, showSidebar) => {
         return showSidebar ? <SideBar animationStyle={style} /> : "";
       })}

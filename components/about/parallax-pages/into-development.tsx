@@ -47,40 +47,46 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
       <ParallaxLayer
         offset={3}
         speed={2.5}
-        className="flex flex-col gap-8 items-center justify-center font-poppins"
         onClick={() =>
           (ref as MutableRefObject<IParallax>).current?.scrollTo(4)
         }
       >
-        <h2 className="text-center text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
-          Jumping Into Development
-        </h2>
-        <TerminalContainer
-          hasCursor
-          headerText="Into Development"
-          headerClass="md:hidden"
+        <section
+          title="into-development-section"
+          id="into-development-section"
+          className="flex flex-col gap-8 h-full items-center justify-center font-poppins"
         >
-          <p>
-            {`Last login: ${dateState.toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              second: "numeric",
-              day: "numeric",
-              month: "long",
-              hour12: true,
-            })} `}
-            <br />
-            el-ser@MacBook ~ % yarn add jumping-into --dev
-            <br />
-            <br />
-            With 5 years experience in software testing, I finally decided to
-            pursue my passion for developing softwares. I took online courses on
-            Udemy and LinkedIn Learning, watched YouTube tutorials, wrote blogs
-            about the things I learned, and used my free time to put what I
-            learned into practice. After several months of learning and applying
-            for a developer position, I finally became a JavaScript Developer!
-          </p>
-        </TerminalContainer>
+          <h2 className="text-center text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
+            Jumping Into Development
+          </h2>
+          <TerminalContainer
+            hasCursor
+            headerText="Into Development"
+            headerClass="md:hidden"
+          >
+            <p>
+              {`Last login: ${dateState.toLocaleString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                second: "numeric",
+                day: "numeric",
+                month: "long",
+                hour12: true,
+              })} `}
+              <br />
+              el-ser@MacBook ~ % yarn add jumping-into --dev
+              <br />
+              <br />
+              With 5 years experience in software testing, I finally decided to
+              pursue my passion for developing softwares. I took online courses
+              on Udemy and LinkedIn Learning, watched YouTube tutorials, wrote
+              blogs about the things I learned, and used my free time to put
+              what I learned into practice. After several months of learning and
+              applying for a developer position, I finally became a JavaScript
+              Developer!
+            </p>
+          </TerminalContainer>
+        </section>
       </ParallaxLayer>
     </>
   );

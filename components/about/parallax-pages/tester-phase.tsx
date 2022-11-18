@@ -48,42 +48,47 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
       <ParallaxLayer
         offset={2}
         speed={1.3}
-        className="flex flex-col gap-8 items-center justify-center font-poppins"
         onClick={() =>
           (ref as MutableRefObject<IParallax>).current?.scrollTo(3)
         }
       >
-        <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
-          Tester Phase
-        </h2>
-        <TerminalContainer
-          hasCursor
-          headerText="Tester Phase"
-          headerClass="md:hidden"
+        <section
+          title="tester-phase-section"
+          id="tester-phase-section"
+          className="flex flex-col h-full gap-8 items-center justify-center font-poppins"
         >
-          <p>
-            {`Last login: ${dateState.toLocaleString("en-US", {
-              hour: "numeric",
-              minute: "numeric",
-              second: "numeric",
-              day: "numeric",
-              month: "long",
-              hour12: true,
-            })} `}
-            <br />
-            el-ser@MacBook ~ % yarn test
-            <br />
-            <br />
-            Fast forward after graduating college in 2016, I started my career
-            as a Test Automation Engineer in a company called Deltek. I didn’t
-            know testing was a thing in software development so I invested my
-            time learning about software testing. As time goes by, new
-            frameworks and libraries became trend in software development such
-            as ReactJS and AngularJS. It offered better developer experience
-            compared to the ones I learned during college which led to asking
-            myself “maybe I could be a developer again?”.
-          </p>
-        </TerminalContainer>
+          <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
+            Tester Phase
+          </h2>
+          <TerminalContainer
+            hasCursor
+            headerText="Tester Phase"
+            headerClass="md:hidden"
+          >
+            <p>
+              {`Last login: ${dateState.toLocaleString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                second: "numeric",
+                day: "numeric",
+                month: "long",
+                hour12: true,
+              })} `}
+              <br />
+              el-ser@MacBook ~ % yarn test
+              <br />
+              <br />
+              Fast forward after graduating college in 2016, I started my career
+              as a Test Automation Engineer in a company called Deltek. I didn’t
+              know testing was a thing in software development so I invested my
+              time learning about software testing. As time goes by, new
+              frameworks and libraries became trend in software development such
+              as ReactJS and AngularJS. It offered better developer experience
+              compared to the ones I learned during college which led to asking
+              myself “maybe I could be a developer again?”.
+            </p>
+          </TerminalContainer>
+        </section>
       </ParallaxLayer>
     </>
   );

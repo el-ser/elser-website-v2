@@ -12,6 +12,8 @@ I intentionally made this repository public hoping that it would help others in 
 - [tailwindcss](https://tailwindcss.com/) - CSS framework
 - [Vercel](https://vercel.com/) - Deployment platform
 - [react-spring](https://react-spring.dev/) - Animation Framework
+- [Playwright](https://playwright.dev/) - End-to-end tests
+- [Jest](https://jestjs.io/) - Unit Tests
   
 ## 🛠 How to Install
 Assuming that you've already cloned or forked this, you can install this project by running:

@@ -2,9 +2,9 @@ const WorkPageOverlay = ({ className }: { className?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="2000"
-      height="2000"
-      viewBox="0 0 800 800"
+      width="100%"
+      height="100%"
+      viewBox="250 0 300 300"
       className="opacity-40"
     >
       <rect

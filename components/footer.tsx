@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { FaCodeBranch } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = ({ className }: { className?: string }) => {
   return (
-    <div className="flex flex-col justify-center items-center gap-4 mb-8 md:flex-row">
+    <div
+      className={`flex flex-col justify-center items-center gap-4 mb-8 md:flex-row ${className}`}
+    >
       <p className="transition-theme text-color font-ubuntuMono text-lg text-center">
         Designed and Built by Manuel Serafin Bugarin
       </p>
