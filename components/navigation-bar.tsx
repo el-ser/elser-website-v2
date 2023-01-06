@@ -2,7 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiAlignRight } from "react-icons/fi";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useTransition, SpringValue } from "react-spring";
+import {
+  useTransition,
+  SpringValue,
+  useSpring,
+  animated,
+  config,
+} from "react-spring";
 
 import NavigationLinks from "./navigation-links";
 import SideBar from "./side-bar";
@@ -24,6 +30,15 @@ export type NavbarStyleType = {
 const NavigationBar = () => {
   const isSideBarOpen = useAppSelector(selectIsSideBarOpen);
   const useDarkMode = useAppSelector(selectUseDarkMode);
+  const navbarSpring = useSpring({
+    from: {
+      y: -300,
+    },
+    to: {
+      y: 0,
+    },
+    config: config.slow,
+  });
   const sidebarTransition = useTransition(isSideBarOpen, {
     from: { x: 1000 },
     enter: { x: 0 },
@@ -44,9 +59,10 @@ const NavigationBar = () => {
 
   return (
     <>
-      <header
+      <animated.header
         id="nav-container"
         className="fixed z-40 w-full flex justify-between items-center h-[10vh] p-4 transition-theme navigation-bg"
+        style={navbarSpring}
       >
         <Link href="/">
           <a id="nav-icon" className="relative grow w-1/2 h-full">
@@ -88,7 +104,7 @@ const NavigationBar = () => {
             externalOptions={{ showText: false }}
           />
         </nav>
-      </header>
+      </animated.header>
       {sidebarTransition((style, showSidebar) => {
         return showSidebar ? <SideBar animationStyle={style} /> : "";
       })}

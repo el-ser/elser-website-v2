@@ -1,7 +1,11 @@
 import { IParallax, ParallaxLayer } from "@react-spring/parallax";
 import React, { MutableRefObject } from "react";
+import { animated } from "@react-spring/web";
+import useMountTrail from "../../../hooks/use-mount-trail";
 
 const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
+  const trails = useMountTrail(3, true);
+
   return (
     <ParallaxLayer
       id="page-1"
@@ -21,15 +25,17 @@ const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
           id="hero-text-container"
           className="flex flex-col font-poppins"
         >
-          <p
+          <animated.p
             title="Hey there! I am"
             className="text-2xl font-ubuntuMono font-bold md:text-4xl"
+            style={trails[0]}
           >
             Hey there! I am
-          </p>
-          <p
+          </animated.p>
+          <animated.p
             title="Manuel Serafin Bugarin"
             className="font-bold text-7xl tracking-normal md:text-9xl"
+            style={trails[1]}
           >
             Manu
             <span className="transition-theme text-accent-light dark:text-accent-dark">
@@ -38,23 +44,19 @@ const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
             afin
             <br />
             Bugarin
-          </p>
-          <p
+          </animated.p>
+
+          <animated.p
             title="A software developer, turning ideas to reality"
             className="text-2xl font-ubuntuMono font-bold py-4 px-0 md:text-3xl"
+            style={trails[2]}
           >
             A{" "}
             <span className="text-accent-light dark:text-accent-dark">
               software developer
             </span>
             , turning ideas to reality
-          </p>
-          <div
-            title="CLICK ME"
-            className="font-ubuntuMono text-5xl font-bold animate-click-me"
-          >
-            CLICK ME
-          </div>
+          </animated.p>
         </h1>
       </section>
     </ParallaxLayer>

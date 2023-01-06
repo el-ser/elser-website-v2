@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRef } from "react";
 import { config } from "react-spring";
+import { animated } from "@react-spring/web";
 
 import CustomButton from "../components/custom-button";
 import TerminalContainer from "../components/terminal-container";
@@ -14,6 +15,7 @@ import WorkPageOverlay from "../components/work/svg/work-page-overlay";
 import TimelineDates from "../components/work/parallax-layers/timeline-dates";
 
 import { useGetPublicRepositoriesQuery } from "../store/github/github.api";
+import useMountTrail from "../hooks/use-mount-trail";
 
 export type TimelineItemType = {
   companyName: string;
@@ -85,6 +87,7 @@ const Work: NextPage = () => {
   // const { data, isLoading, isError } = useGetPublicRepositoriesQuery(null);
   const timelinePages = timelineDetails.length;
   const parallaxRef = useRef<IParallax>(null!);
+  const trails = useMountTrail(4);
 
   return (
     <div>
@@ -103,12 +106,15 @@ const Work: NextPage = () => {
             className="flex justify-left items-center"
             onClick={() => parallaxRef.current.scrollTo(1)}
           >
-            <h2 className="text-left text-color font-lexendDeca text-6xl font-bold pl-4 md:text-8xl">
+            <animated.h2
+              className="text-left text-color font-lexendDeca text-6xl font-bold pl-4 md:text-8xl"
+              style={trails[3]}
+            >
               WORK{" "}
               <span className="text-accent-light dark:text-accent-dark">
                 HISTORY
               </span>
-            </h2>
+            </animated.h2>
           </ParallaxLayer>
 
           {/* timeline bar */}
@@ -121,7 +127,10 @@ const Work: NextPage = () => {
             }}
             className="flex justify-end"
           >
-            <div className="transition-theme bg-navy-blue-700 dark:bg-smoke-600 w-4 h-full rounded-xl" />
+            <animated.div
+              className="transition-theme bg-navy-blue-700 dark:bg-smoke-600 w-4 h-full rounded-xl"
+              style={trails[1]}
+            />
           </ParallaxLayer>
 
           {/** overlay */}
@@ -131,12 +140,18 @@ const Work: NextPage = () => {
               zIndex: -30,
             }}
           >
-            <div className="relative h-screen w-screen">
+            <animated.div
+              className="relative h-screen w-screen"
+              style={trails[0]}
+            >
               <WorkPageOverlay />
-            </div>
+            </animated.div>
           </ParallaxLayer>
 
-          <TimelineDates />
+          {/** timeline dates */}
+          <animated.div style={trails[3]}>
+            <TimelineDates />
+          </animated.div>
 
           {/* work history layers */}
           {timelineDetails.map((item, idx) => {
