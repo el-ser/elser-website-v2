@@ -1,16 +1,21 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useTrail } from "@react-spring/web";
 
 import BlogLoader from "../components/loaders/blog-loader";
 import BlogCard from "../components/blogs/blog-card";
 import PageTitle from "../components/page-title";
+import Footer from "../components/footer";
 
 import { useGetBlogsDataQuery, BlogDetails } from "../store/blogs/blogs.api";
-import Footer from "../components/footer";
+import useMountTrail from "../hooks/use-mount-trail";
 
 const Blogs: NextPage = () => {
   const blogsQueryResult = useGetBlogsDataQuery(null);
   const { data, isLoading, isError } = blogsQueryResult;
+  const trailCount = data ? data.length + 1 : 1;
+
+  const trails = useMountTrail(trailCount);
 
   return (
     <div>
@@ -18,12 +23,15 @@ const Blogs: NextPage = () => {
         <title>Blogs / el-ser</title>
       </Head>
       <main className="flex flex-col pt-[10vh] justify-center items-center gap-y-8">
-        <PageTitle>Blogs</PageTitle>
+        <PageTitle spring={trails[0]}>Blogs</PageTitle>
         {isLoading || isError ? (
           <BlogLoader />
         ) : (
-          data.map((blog: BlogDetails) => {
-            return <BlogCard key={blog._id} details={blog} />;
+          data.map((blog: BlogDetails, idx: number) => {
+            trails.shift();
+            return (
+              <BlogCard key={blog._id} details={blog} trail={trails[idx]} />
+            );
           })
         )}
 

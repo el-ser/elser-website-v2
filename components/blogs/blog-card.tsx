@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SpringValue, animated } from "@react-spring/web";
 
 import { BlogDetails } from "../../store/blogs/blogs.api";
 
-const BlogCard = ({ details }: { details: BlogDetails }) => {
+const BlogCard = ({
+  details,
+  trail,
+}: {
+  details: BlogDetails;
+  trail: { opacity: SpringValue<number> };
+}) => {
   const { coverImage, title, brief, slug, dateAdded } = details;
   const date = new Date(dateAdded).toDateString();
   const dateArr = date.split(" ");
@@ -16,9 +23,12 @@ const BlogCard = ({ details }: { details: BlogDetails }) => {
 
   return (
     <>
-      <hr className="border-[0.5px] rounded-full border-navy-blue-800/30 dark:border-smoke-600/30 w-[90%]" />
+      <animated.hr className="border-[0.5px] rounded-full border-navy-blue-800/30 dark:border-smoke-600/30 w-[90%]" />
       <Link href={`https://elser.hashnode.dev/${slug}`}>
-        <article className="grid grid-cols-1 mx-4 mt-4 gap-8 group/blog cursor-pointer items-center md:grid-cols-blog-card md:w-[85%]">
+        <animated.article
+          className="grid grid-cols-1 mx-4 mt-4 gap-8 group/blog cursor-pointer items-center md:grid-cols-blog-card md:w-[85%]"
+          style={trail}
+        >
           <div className="relative h-60 w-full transition-theme group-hover/blog:scale-105">
             <Image
               src={coverImage}
@@ -36,7 +46,7 @@ const BlogCard = ({ details }: { details: BlogDetails }) => {
             <p className="font-semibold">{`(${dateDetails.month} ${dateDetails.date}, ${dateDetails.year})`}</p>
             <p className="text-lg text-justify">{brief}</p>
           </div>
-        </article>
+        </animated.article>
       </Link>
     </>
   );
