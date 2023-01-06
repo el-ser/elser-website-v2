@@ -1,24 +1,10 @@
 import { IParallax, ParallaxLayer } from "@react-spring/parallax";
-import React, { MutableRefObject, useEffect } from "react";
-import { useTrail, animated, config } from "@react-spring/web";
+import React, { MutableRefObject } from "react";
+import { animated } from "@react-spring/web";
+import useMountTrail from "../../../hooks/use-mount-trail";
 
 const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
-  const [trails, api] = useTrail(3, () => ({
-    from: {
-      opacity: 0,
-    },
-    to: {
-      opacity: 1,
-    },
-    config: {
-      duration: 500,
-      ...config.gentle,
-    },
-  }));
-
-  useEffect(() => {
-    api.start();
-  });
+  const trails = useMountTrail(3, true);
 
   return (
     <ParallaxLayer
