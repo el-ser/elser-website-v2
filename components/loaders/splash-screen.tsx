@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useSpring, useSpringRef, animated, easings } from "@react-spring/web";
 import { useEffect } from "react";
+import Head from "next/head";
 
 const SplashScreen = () => {
   const api = useSpringRef();
@@ -29,18 +30,23 @@ const SplashScreen = () => {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
-      <animated.div className="relative h-full w-60" style={spring}>
-        <Image
-          src="/logo.svg"
-          alt="splash-logo"
-          priority
-          layout="fill"
-          objectFit="contain"
-          objectPosition="left"
-        />
-      </animated.div>
-    </div>
+    <>
+      <Head>
+        <title>el-ser</title>
+      </Head>
+      <div className="h-screen w-screen flex justify-center items-center">
+        <animated.div className="relative h-full w-60" style={spring}>
+          <Image
+            src="/logo.svg"
+            alt="splash-logo"
+            priority
+            layout="fill"
+            objectFit="contain"
+            objectPosition="left"
+          />
+        </animated.div>
+      </div>
+    </>
   );
 };
 
