@@ -13,15 +13,15 @@ import {
 import NavigationLinks from "./navigation-links";
 import SideBar from "./side-bar";
 
-import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   selectIsSideBarOpen,
   selectUseDarkMode,
-} from "../store/navigation/navigation.selector";
+} from "../../store/navigation/navigation.selector";
 import {
   setIsSideBarOpen,
   setUseDarkMode,
-} from "../store/navigation/navigation.slice";
+} from "../../store/navigation/navigation.slice";
 
 export type NavbarStyleType = {
   x: SpringValue<number>;
@@ -62,8 +62,7 @@ const NavigationBar = () => {
       <animated.header
         id="nav-container"
         className="fixed z-40 w-full flex justify-between items-center h-[10vh] p-4 transition-theme navigation-bg"
-        style={navbarSpring}
-      >
+        style={navbarSpring}>
         <Link href="/">
           <a id="nav-icon" className="relative grow w-1/2 h-full">
             <Image
@@ -79,12 +78,10 @@ const NavigationBar = () => {
 
         <div
           id="nav-menu"
-          className="flex justify-end items-center grow-3 gap-x-4  w-12 h-full"
-        >
+          className="flex justify-end items-center grow-3 gap-x-4  w-12 h-full">
           <span
             onClick={handleDarkMode}
-            className="flex items-center h-full w-16 md:mr-8"
-          >
+            className="flex items-center h-full w-16 md:mr-8">
             {useDarkMode ? (
               <FaMoon className="h-1/2 w-full cursor-pointer" />
             ) : (

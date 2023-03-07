@@ -1,3 +1,5 @@
+const { transform } = require("typescript");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
@@ -31,7 +33,8 @@ module.exports = {
         4: 4,
       },
       animation: {
-        "pulse-70": "pulse-70 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "horizontal-bounce": "horizontal-bounce 2s infinite",
+        "pulse-70": "pulse-70 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
         "pulse-70": {
@@ -40,6 +43,16 @@ module.exports = {
           },
           "50%": {
             opacity: 0.7,
+          },
+        },
+        "horizontal-bounce": {
+          "0%, 100%": {
+            transform: "translateX(-40%)",
+            "animation-timing-function": "cubic-bezier(0,0,0.2,1)",
+          },
+          "50%": {
+            transform: "none",
+            "animation-timing-function": "cubic-bezier(0.8,0,2,1)",
           },
         },
       },

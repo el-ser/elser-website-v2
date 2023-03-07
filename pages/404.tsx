@@ -1,4 +1,4 @@
-import TerminalContainer from "../components/terminal-container";
+import TerminalContainer from "../components/common/terminal-container";
 
 export default function Custom404() {
   return (

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Footer from "./footer";
 import NavigationBar from "./navigation-bar";
-import SplashScreen from "./loaders/splash-screen";
+import SplashScreen from "../loaders/splash-screen";
 
 export default function Layout({ children }: { children: JSX.Element }) {
   const [showSplash, setShowSplash] = useState(true);
