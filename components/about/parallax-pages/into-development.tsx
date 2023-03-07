@@ -2,10 +2,11 @@ import { ParallaxLayer, IParallax } from "@react-spring/parallax";
 import React, { MutableRefObject, useState, useEffect } from "react";
 import { SiNextdotjs } from "react-icons/si";
 
-import TerminalContainer from "../../terminal-container";
+import TerminalContainer from "../../common/terminal-container";
 import ReactIcon from "../svg/into-development/react-icon";
 import JavaScriptIcon from "../svg/into-development/javascript-icon";
 import NodejsIcon from "../svg/into-development/nodejs-icon";
+import NextPageArrow from "../next-page-arrow";
 
 const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
@@ -49,21 +50,18 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
         speed={2.5}
         onClick={() =>
           (ref as MutableRefObject<IParallax>).current?.scrollTo(4)
-        }
-      >
+        }>
         <section
           title="into-development-section"
           id="into-development-section"
-          className="flex flex-col gap-8 h-full items-center justify-center font-poppins"
-        >
+          className="flex flex-col gap-8 h-full items-center justify-center font-poppins">
           <h2 className="text-center text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
             Jumping Into Development
           </h2>
           <TerminalContainer
             hasCursor
             headerText="Into Development"
-            headerClass="md:hidden"
-          >
+            headerClass="md:hidden">
             <p>
               {`Last login: ${dateState.toLocaleString("en-US", {
                 hour: "numeric",
@@ -88,6 +86,15 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
           </TerminalContainer>
         </section>
       </ParallaxLayer>
+
+      {/* next section arrow */}
+      <NextPageArrow
+        onClickHandler={() =>
+          (ref as MutableRefObject<IParallax>).current?.scrollTo(4)
+        }
+        offset={3}
+        speed={2}
+      />
     </>
   );
 });

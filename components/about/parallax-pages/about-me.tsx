@@ -1,11 +1,11 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
-import Image from "next/image";
-
 import React, { useState, MutableRefObject, useEffect } from "react";
-import TerminalContainer from "../../terminal-container";
+
+import TerminalContainer from "../../common/terminal-container";
 import HeadphonesIcon from "../svg/about-me/headphones-icon";
 import CameraIcon from "../svg/about-me/camera-icon";
 import TravelIcon from "../svg/about-me/travel-icons";
+import NextPageArrow from "../next-page-arrow";
 
 const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
@@ -38,26 +38,18 @@ const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
       </ParallaxLayer>
 
       {/* page 2 description */}
-      <ParallaxLayer
-        offset={1}
-        speed={2.5}
-        onClick={() =>
-          (ref as MutableRefObject<IParallax>).current?.scrollTo(2)
-        }
-      >
+      <ParallaxLayer offset={1} speed={2.5}>
         <section
           title="about-me-section"
           id="about-me-section"
-          className="flex flex-col h-full gap-8 items-center justify-center font-poppins"
-        >
+          className="flex flex-col h-full gap-8 items-center justify-center font-poppins">
           <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
             About Me
           </h2>
           <TerminalContainer
             hasCursor
             headerText="About Me"
-            headerClass="md:hidden"
-          >
+            headerClass="md:hidden">
             <p>
               {`Last login: ${dateState.toLocaleString("en-US", {
                 hour: "numeric",
@@ -82,6 +74,15 @@ const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
           </TerminalContainer>
         </section>
       </ParallaxLayer>
+
+      {/* next section arrow */}
+      <NextPageArrow
+        onClickHandler={() => {
+          (ref as MutableRefObject<IParallax>).current?.scrollTo(2);
+        }}
+        offset={1}
+        speed={2}
+      />
     </>
   );
 });

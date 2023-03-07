@@ -9,9 +9,9 @@ import {
 } from "react-icons/fa";
 
 import Link from "next/link";
-import TerminalContainer from "../../terminal-container";
+import TerminalContainer from "../../common/terminal-container";
 import { IconType } from "react-icons";
-import Footer from "../../footer";
+import Footer from "../../common/footer";
 
 type IconLink = {
   href: string;
@@ -77,8 +77,7 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
           </TerminalContainer>
           <div
             id="links"
-            className="flex justify-center items-center gap-x-8 text-color font-lexendDeca md:gap-x-16"
-          >
+            className="flex justify-center items-center gap-x-8 text-color font-lexendDeca md:gap-x-16">
             {links.map(({ href, text, Icon }, idx) => {
               return (
                 <Link href={href} key={idx}>
@@ -104,8 +103,7 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
         style={{
           height: "10%",
           width: "5%",
-        }}
-      >
+        }}>
         <FaAngleLeft className="h-full w-auto cursor-pointer animate-pulse-70" />
       </ParallaxLayer>
     </>

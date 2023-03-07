@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import { Provider } from "react-redux";
 
 import "../styles/globals.css";
-import Layout from "../components/layout";
+import Layout from "../components/common/layout";
 import { store } from "../store/store";
-import ReactIconProvider from "../components/icon-provider";
+import ReactIconProvider from "../components/common/icon-provider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   // useEffect(() => {

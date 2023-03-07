@@ -2,10 +2,11 @@ import { ParallaxLayer, IParallax } from "@react-spring/parallax";
 import React, { MutableRefObject, useState, useEffect } from "react";
 import { GrTest } from "react-icons/gr";
 
-import TerminalContainer from "../../terminal-container";
+import TerminalContainer from "../../common/terminal-container";
 import CucumberIcon from "../svg/tester-phase/cucumber-icon";
 import JestIcon from "../svg/tester-phase/jest-icon";
 import NightwatchIcon from "../svg/tester-phase/nightwatch-icon";
+import NextPageArrow from "../next-page-arrow";
 
 const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
@@ -45,26 +46,18 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
       </ParallaxLayer>
 
       {/* page 3 description */}
-      <ParallaxLayer
-        offset={2}
-        speed={1.3}
-        onClick={() =>
-          (ref as MutableRefObject<IParallax>).current?.scrollTo(3)
-        }
-      >
+      <ParallaxLayer offset={2} speed={1.3}>
         <section
           title="tester-phase-section"
           id="tester-phase-section"
-          className="flex flex-col h-full gap-8 items-center justify-center font-poppins"
-        >
+          className="flex flex-col h-full gap-8 items-center justify-center font-poppins">
           <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
             Tester Phase
           </h2>
           <TerminalContainer
             hasCursor
             headerText="Tester Phase"
-            headerClass="md:hidden"
-          >
+            headerClass="md:hidden">
             <p>
               {`Last login: ${dateState.toLocaleString("en-US", {
                 hour: "numeric",
@@ -90,6 +83,15 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
           </TerminalContainer>
         </section>
       </ParallaxLayer>
+
+      {/* next section arrow */}
+      <NextPageArrow
+        onClickHandler={() =>
+          (ref as MutableRefObject<IParallax>).current?.scrollTo(3)
+        }
+        offset={2}
+        speed={2}
+      />
     </>
   );
 });

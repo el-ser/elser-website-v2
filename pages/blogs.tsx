@@ -4,8 +4,8 @@ import { useTrail } from "@react-spring/web";
 
 import BlogLoader from "../components/loaders/blog-loader";
 import BlogCard from "../components/blogs/blog-card";
-import PageTitle from "../components/page-title";
-import Footer from "../components/footer";
+import PageTitle from "../components/common/page-title";
+import Footer from "../components/common/footer";
 
 import { useGetBlogsDataQuery, BlogDetails } from "../store/blogs/blogs.api";
 import useMountTrail from "../hooks/use-mount-trail";

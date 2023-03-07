@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-import { useAppSelector, useAppDispatch } from "../store/hooks";
+import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import {
   selectExternalLinks,
   selectInternalLinks,
-} from "../store/navigation/navigation.selector";
-import { setIsSideBarOpen } from "../store/navigation/navigation.slice";
+} from "../../store/navigation/navigation.selector";
+import { setIsSideBarOpen } from "../../store/navigation/navigation.slice";
 
 type LinkOptions = {
   showText?: boolean;
@@ -41,8 +41,7 @@ const NavigationLinks = ({
               className={`${linkClasses} ${internalOptions.className}`}
               onClick={() => {
                 dispatch(setIsSideBarOpen());
-              }}
-            >
+              }}>
               {internalOptions.showIcon && <Icon />}
               {link.text}
             </a>
@@ -57,8 +56,7 @@ const NavigationLinks = ({
               className={`${linkClasses} ${externalOptions.className}`}
               onClick={() => {
                 dispatch(setIsSideBarOpen());
-              }}
-            >
+              }}>
               <Icon className="w-6 h-6" />
               {externalOptions.showText && link.text}
             </a>

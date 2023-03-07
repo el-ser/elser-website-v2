@@ -1,4 +1,4 @@
-import { SVGComponent } from "../types";
+import { SVGComponent } from "../../../types";
 
 const HashnodeIcon = ({ className }: SVGComponent) => (
   <svg height="16" viewBox="0 0 337 337" fill="none" className={`${className}`}>

@@ -6,8 +6,8 @@ import { useRef } from "react";
 import { config } from "react-spring";
 import { animated } from "@react-spring/web";
 
-import CustomButton from "../components/custom-button";
-import TerminalContainer from "../components/terminal-container";
+import CustomButton from "../components/common/custom-button";
+import TerminalContainer from "../components/common/terminal-container";
 import DeltekIcon from "../components/work/svg/deltek-icon";
 import MayaIcon from "../components/work/svg/maya-icon";
 import VertereIcon from "../components/work/svg/vertere-icon";
@@ -98,18 +98,15 @@ const Work: NextPage = () => {
         <Parallax
           ref={parallaxRef}
           pages={timelinePages + 2}
-          config={config.gentle}
-        >
+          config={config.gentle}>
           {/** page title */}
           <ParallaxLayer
             offset={0}
             className="flex justify-left items-center"
-            onClick={() => parallaxRef.current.scrollTo(1)}
-          >
+            onClick={() => parallaxRef.current.scrollTo(1)}>
             <animated.h2
               className="text-left text-color font-lexendDeca text-6xl font-bold pl-4 md:text-8xl"
-              style={trails[3]}
-            >
+              style={trails[3]}>
               WORK{" "}
               <span className="text-accent-light dark:text-accent-dark">
                 HISTORY
@@ -125,8 +122,7 @@ const Work: NextPage = () => {
               top: 0,
               right: 0,
             }}
-            className="flex justify-end"
-          >
+            className="flex justify-end">
             <animated.div
               className="transition-theme bg-navy-blue-700 dark:bg-smoke-600 w-4 h-full rounded-xl"
               style={trails[1]}
@@ -138,12 +134,10 @@ const Work: NextPage = () => {
             sticky={{ start: 0, end: timelinePages }}
             style={{
               zIndex: -30,
-            }}
-          >
+            }}>
             <animated.div
               className="relative h-screen w-screen"
-              style={trails[0]}
-            >
+              style={trails[0]}>
               <WorkPageOverlay />
             </animated.div>
           </ParallaxLayer>
@@ -172,8 +166,7 @@ const Work: NextPage = () => {
                     timelineDetails[idx + 1].offset
                   );
                 }}
-                className="flex flex-col justify-center items-center"
-              >
+                className="flex flex-col justify-center items-center">
                 {Logo}
                 <TerminalContainer containerClass="w-3/4 mr-20 md:w-3/5">
                   <>
@@ -203,8 +196,7 @@ const Work: NextPage = () => {
           <ParallaxLayer
             offset={4}
             speed={2}
-            className="flex justify-center items-start"
-          >
+            className="flex justify-center items-start">
             <h2 className="text-center text-color font-lexendDeca text-6xl font-bold pt-[20vh] md:text-8xl">
               HIRING?
             </h2>
@@ -212,8 +204,7 @@ const Work: NextPage = () => {
           <ParallaxLayer
             offset={4}
             speed={1}
-            className="flex justify-center items-center"
-          >
+            className="flex justify-center items-center">
             <p className="text-color font-ubuntuMono text-center text-2xl w-3/4 md:text-3xl">
               I'm always open for new opportunities! <br />
               Connect with me through my LinkedIn or directly download my CV!
@@ -222,8 +213,7 @@ const Work: NextPage = () => {
           <ParallaxLayer
             offset={4.2}
             speed={0}
-            className="flex justify-center items-center gap-4"
-          >
+            className="flex justify-center items-center gap-4">
             <CustomButton>
               <Link href="https://www.linkedin.com/in/manuel-serafin-bugarin-636554144/">
                 LinkedIn
