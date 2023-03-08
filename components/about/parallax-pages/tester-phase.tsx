@@ -1,12 +1,14 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
 import React, { MutableRefObject, useState, useEffect } from "react";
 import { GrTest } from "react-icons/gr";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 import TerminalContainer from "../../common/terminal-container";
 import CucumberIcon from "../svg/tester-phase/cucumber-icon";
 import JestIcon from "../svg/tester-phase/jest-icon";
 import NightwatchIcon from "../svg/tester-phase/nightwatch-icon";
-import NextPageArrow from "../next-page-arrow";
+
+const HEADER_TEXT = "Tester Experience";
 
 const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
@@ -52,46 +54,49 @@ const TesterPhase = React.forwardRef<IParallax, {}>((_props, ref) => {
           id="tester-phase-section"
           className="flex flex-col h-full gap-8 items-center justify-center font-poppins">
           <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
-            Tester Phase
+            {HEADER_TEXT}
           </h2>
-          <TerminalContainer
-            hasCursor
-            headerText="Tester Phase"
-            headerClass="md:hidden">
-            <p>
-              {`Last login: ${dateState.toLocaleString("en-US", {
-                hour: "numeric",
-                minute: "numeric",
-                second: "numeric",
-                day: "numeric",
-                month: "long",
-                hour12: true,
-              })} `}
-              <br />
-              el-ser@MacBook ~ % yarn test
-              <br />
-              <br />
-              Fast forward after graduating college in 2016, I started my career
-              as a Test Automation Engineer in a company called Deltek. I didn’t
-              know testing was a thing in software development so I invested my
-              time learning about software testing. As time goes by, new
-              frameworks and libraries became trend in software development such
-              as ReactJS and AngularJS. It offered better developer experience
-              compared to the ones I learned during college which led to asking
-              myself “maybe I could be a developer again?”.
-            </p>
-          </TerminalContainer>
+          <div className="flex flex-row justify-center items-center">
+            <FaAngleLeft
+              className="change-offset-button"
+              onClick={() => {
+                (ref as MutableRefObject<IParallax>).current?.scrollTo(1);
+              }}
+            />
+            <TerminalContainer
+              hasCursor
+              headerText={HEADER_TEXT}
+              headerClass="md:hidden">
+              <p>
+                {`Last login: ${dateState.toLocaleString("en-US", {
+                  hour: "numeric",
+                  minute: "numeric",
+                  second: "numeric",
+                  day: "numeric",
+                  month: "long",
+                  hour12: true,
+                })} `}
+                <br />
+                el-ser@MacBook ~ % yarn test
+                <br />
+                <br />
+                After graduating college in 2016, I started my career as a Test
+                Automation Engineer. I didn’t know test automation was a thing
+                in software development so I invested my time learning about it.
+                As time goes by, new frameworks and libraries became trend in
+                software development which led me to asking myself “maybe I
+                could be still be a developer?”.
+              </p>
+            </TerminalContainer>
+            <FaAngleRight
+              className="change-offset-button"
+              onClick={() => {
+                (ref as MutableRefObject<IParallax>).current?.scrollTo(3);
+              }}
+            />
+          </div>
         </section>
       </ParallaxLayer>
-
-      {/* next section arrow */}
-      <NextPageArrow
-        onClickHandler={() =>
-          (ref as MutableRefObject<IParallax>).current?.scrollTo(3)
-        }
-        offset={2}
-        speed={2}
-      />
     </>
   );
 });

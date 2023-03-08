@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useTrail } from "@react-spring/web";
 
 import BlogLoader from "../components/loaders/blog-loader";
 import BlogCard from "../components/blogs/blog-card";

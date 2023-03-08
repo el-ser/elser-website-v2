@@ -1,11 +1,13 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
 import React, { useState, MutableRefObject, useEffect } from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 import TerminalContainer from "../../common/terminal-container";
 import HeadphonesIcon from "../svg/about-me/headphones-icon";
 import CameraIcon from "../svg/about-me/camera-icon";
 import TravelIcon from "../svg/about-me/travel-icons";
-import NextPageArrow from "../next-page-arrow";
+
+const HEADER_TEXT = "About Myself";
 
 const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
@@ -44,45 +46,46 @@ const AboutMe = React.forwardRef<IParallax, {}>((_props, ref) => {
           id="about-me-section"
           className="flex flex-col h-full gap-8 items-center justify-center font-poppins">
           <h2 className="text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
-            About Me
+            {HEADER_TEXT}
           </h2>
-          <TerminalContainer
-            hasCursor
-            headerText="About Me"
-            headerClass="md:hidden">
-            <p>
-              {`Last login: ${dateState.toLocaleString("en-US", {
-                hour: "numeric",
-                minute: "numeric",
-                second: "numeric",
-                day: "numeric",
-                month: "long",
-                hour12: true,
-              })} `}
-              <br />
-              el-ser@MacBook ~ % yarn init --aboutme
-              <br />
-              <br />
-              My name is Manuel Serafin Bugarin but people usually call me
-              Macky. I graduated with a bachelor’s degree of Computer Science in
-              Mapua University. Similar to others, my exposure to computer was
-              through video games. Have you seen people playing LAN games in a
-              local computer rental shops? Yeah, I used to be one of those kids.
-              As I grew up, I developed interests to 🎸 music , 🎥 film making,
-              and ✈️ travelling!
-            </p>
-          </TerminalContainer>
+          <div className="flex flex-row justify-center items-center">
+            <FaAngleLeft
+              className="change-offset-button"
+              onClick={() => {
+                (ref as MutableRefObject<IParallax>).current?.scrollTo(0);
+              }}
+            />
+            <TerminalContainer
+              hasCursor
+              headerText={HEADER_TEXT}
+              headerClass="md:hidden">
+              <p>
+                {`Last login: ${dateState.toLocaleString("en-US", {
+                  hour: "numeric",
+                  minute: "numeric",
+                  second: "numeric",
+                  day: "numeric",
+                  month: "long",
+                  hour12: true,
+                })} `}
+                <br />
+                el-ser@MacBook ~ % yarn init --aboutme
+                <br />
+                <br />
+                Hi! My name is Manuel Serafin Bugarin but you can call me Macky.
+                I am a computer science graduate from Mapua University and
+                currently working as a software developer.
+              </p>
+            </TerminalContainer>
+            <FaAngleRight
+              className="change-offset-button"
+              onClick={() => {
+                (ref as MutableRefObject<IParallax>).current?.scrollTo(2);
+              }}
+            />
+          </div>
         </section>
       </ParallaxLayer>
-
-      {/* next section arrow */}
-      <NextPageArrow
-        onClickHandler={() => {
-          (ref as MutableRefObject<IParallax>).current?.scrollTo(2);
-        }}
-        offset={1}
-        speed={2}
-      />
     </>
   );
 });

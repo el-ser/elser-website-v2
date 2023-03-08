@@ -14,22 +14,25 @@
     @apply text-navy-blue-700 dark:text-smoke-600;
   }
   .inverted-text-color {
-    @apply text-smoke-600 dark:text-navy-blue-700
+    @apply text-smoke-600 dark:text-navy-blue-700;
   }
   .parallax-icon-size {
-    @apply absolute w-12 h-12 md:w-16 md:h-16
+    @apply absolute w-12 h-12 md:w-16 md:h-16;
   }
   .button-style {
-    @apply font-poppins rounded-lg px-5 py-4 mx-4 text-2xl font-bold flex justify-center items-center
+    @apply font-poppins rounded-lg px-5 py-4 mx-4 text-2xl font-bold flex justify-center items-center;
   }
-  .svg-color { 
+  .svg-color {
     @apply transition-theme fill-navy-blue-700 dark:fill-smoke-600;
   }
   .icon-size {
-    @apply w-10 h-10 md:w-14 md:h-14
+    @apply w-10 h-10 md:w-14 md:h-14;
   }
   .skeleton-bg {
-    @apply bg-navy-blue-700/20 dark:bg-smoke-600/40 
+    @apply bg-navy-blue-700/20 dark:bg-smoke-600/40;
+  }
+  .change-offset-button {
+    @apply w-16 h-16 animate-pulse-70 transition-all duration-700 hover:scale-150;
   }
 }
 
