@@ -1,12 +1,14 @@
 import { ParallaxLayer, IParallax } from "@react-spring/parallax";
 import React, { MutableRefObject, useState, useEffect } from "react";
 import { SiNextdotjs } from "react-icons/si";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 import TerminalContainer from "../../common/terminal-container";
 import ReactIcon from "../svg/into-development/react-icon";
 import JavaScriptIcon from "../svg/into-development/javascript-icon";
 import NodejsIcon from "../svg/into-development/nodejs-icon";
-import NextPageArrow from "../next-page-arrow";
+
+const HEADER_TEXT = "Road to Developer";
 
 const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
   const [dateState, setDateState] = useState(new Date());
@@ -45,56 +47,55 @@ const IntoDevelopment = React.forwardRef<IParallax, {}>((_props, ref) => {
       </ParallaxLayer>
 
       {/* page 4 description */}
-      <ParallaxLayer
-        offset={3}
-        speed={2.5}
-        onClick={() =>
-          (ref as MutableRefObject<IParallax>).current?.scrollTo(4)
-        }>
+      <ParallaxLayer offset={3} speed={2.5}>
         <section
           title="into-development-section"
           id="into-development-section"
           className="flex flex-col gap-8 h-full items-center justify-center font-poppins">
           <h2 className="text-center text-color font-lexendDeca text-5xl font-bold pt-[5vh] hidden md:block">
-            Jumping Into Development
+            {HEADER_TEXT}
           </h2>
-          <TerminalContainer
-            hasCursor
-            headerText="Into Development"
-            headerClass="md:hidden">
-            <p>
-              {`Last login: ${dateState.toLocaleString("en-US", {
-                hour: "numeric",
-                minute: "numeric",
-                second: "numeric",
-                day: "numeric",
-                month: "long",
-                hour12: true,
-              })} `}
-              <br />
-              el-ser@MacBook ~ % yarn add jumping-into --dev
-              <br />
-              <br />
-              With 5 years experience in software testing, I finally decided to
-              pursue my passion for developing softwares. I took online courses
-              on Udemy and LinkedIn Learning, watched YouTube tutorials, wrote
-              blogs about the things I learned, and used my free time to put
-              what I learned into practice. After several months of learning and
-              applying for a developer position, I finally became a JavaScript
-              Developer!
-            </p>
-          </TerminalContainer>
+          <div className="flex flex-row justify-center items-center">
+            <FaAngleLeft
+              className="change-offset-button"
+              onClick={() => {
+                (ref as MutableRefObject<IParallax>).current?.scrollTo(2);
+              }}
+            />
+            <TerminalContainer
+              hasCursor
+              headerText={HEADER_TEXT}
+              headerClass="md:hidden">
+              <p>
+                {`Last login: ${dateState.toLocaleString("en-US", {
+                  hour: "numeric",
+                  minute: "numeric",
+                  second: "numeric",
+                  day: "numeric",
+                  month: "long",
+                  hour12: true,
+                })} `}
+                <br />
+                el-ser@MacBook ~ % yarn add jumping-into --dev
+                <br />
+                <br />
+                With 6 years experience in software testing, I finally decided
+                to pursue my passion for developing softwares. I took online
+                courses on Udemy and LinkedIn Learning, watched YouTube
+                tutorials, wrote blogs about the things I learned, and used my
+                free time to practice. After several months of learning and
+                submitting resume, I finally became Software Developer!
+              </p>
+            </TerminalContainer>
+            <FaAngleRight
+              className="change-offset-button"
+              onClick={() => {
+                (ref as MutableRefObject<IParallax>).current?.scrollTo(4);
+              }}
+            />
+          </div>
         </section>
       </ParallaxLayer>
-
-      {/* next section arrow */}
-      <NextPageArrow
-        onClickHandler={() =>
-          (ref as MutableRefObject<IParallax>).current?.scrollTo(4)
-        }
-        offset={3}
-        speed={2}
-      />
     </>
   );
 });

@@ -49,7 +49,7 @@ const timelineDetails: TimelineItemType[] = [
     companyName: "Maya",
     role: "Quality Engineer Specialist",
     description: [
-      "Performed API and mobile app testing with Cucumber.js and Codeceptjs",
+      "Performed API and mobile app testing with Cucumber.js, Behave Python and Codeceptjs",
       "Utilized GitLab CI/CD and GitLab registries to deliver quicker result and reusable codes",
     ],
     techStack: [
@@ -68,10 +68,11 @@ const timelineDetails: TimelineItemType[] = [
     companyName: "Vertere Global Solutions",
     role: "Programmer Analyst S3",
     description: [
-      "Developed and maintained features for Metrobank's back office application",
+      "Developed and deployed features for Metrobank Authenticator",
       "Investigated production issues through NGINX logs and service logs",
     ],
     techStack: [
+      "React-native",
       "React Boilerplate",
       "NGINX",
       "Tailwindcss",

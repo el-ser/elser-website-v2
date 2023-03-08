@@ -36,8 +36,8 @@ const links: IconLink[] = [
     Icon: FaFeatherAlt,
   },
   {
-    href: "/work",
-    text: "Work",
+    href: "/experience",
+    text: "Experience",
     Icon: FaCode,
   },
 ];
