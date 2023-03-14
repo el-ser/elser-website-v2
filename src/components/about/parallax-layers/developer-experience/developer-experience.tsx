@@ -4,7 +4,7 @@ import { SiNextdotjs } from "react-icons/si";
 
 import { terminalDetails } from "../../../../../config/about-page-data";
 
-import AboutTerminal from "../../about-terminal/about-terminal";
+import AboutTerminal from "../about-terminal/about-terminal";
 import ReactIcon from "../../svg/into-development/react-icon";
 import JavaScriptIcon from "../../svg/into-development/javascript-icon";
 import NodejsIcon from "../../svg/into-development/nodejs-icon";

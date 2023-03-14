@@ -1,9 +1,10 @@
 import { IParallax, ParallaxLayer } from "@react-spring/parallax";
 import React, { MutableRefObject } from "react";
 import { animated } from "@react-spring/web";
-import { FaAngleRight } from "react-icons/fa";
 
 import useMountTrail from "../../../../hooks/use-mount-trail";
+
+import ParallaxIntroArrow from "../../../common/parallax-intro-arrow/parallax-intro-arrow";
 
 const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
   const trails = useMountTrail(3, true);
@@ -55,15 +56,13 @@ const HeroPage = React.forwardRef<IParallax, {}>((_props, ref) => {
       </ParallaxLayer>
 
       {/* next section arrow */}
-      <ParallaxLayer
+      <ParallaxIntroArrow
         offset={0}
         speed={1}
         onClick={() =>
           (ref as MutableRefObject<IParallax>).current?.scrollTo(1)
         }
-        className="flex justify-end text-color text-8xl mt-[12vh] md:text-9xl">
-        <FaAngleRight className="cursor-pointer animate-horizontal-bounce" />
-      </ParallaxLayer>
+      />
     </>
   );
 });

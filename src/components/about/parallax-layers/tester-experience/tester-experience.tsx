@@ -4,7 +4,7 @@ import { GrTest } from "react-icons/gr";
 
 import { terminalDetails } from "../../../../../config/about-page-data";
 
-import AboutTerminal from "../../about-terminal/about-terminal";
+import AboutTerminal from "../about-terminal/about-terminal";
 import CucumberIcon from "../../svg/tester-phase/cucumber-icon";
 import JestIcon from "../../svg/tester-phase/jest-icon";
 import NightwatchIcon from "../../svg/tester-phase/nightwatch-icon";

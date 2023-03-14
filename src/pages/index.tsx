@@ -4,11 +4,11 @@ import Head from "next/head";
 import { config } from "react-spring";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-import AboutMe from "../components/about/parallax-pages/about-me/about-me";
-import TesterPhase from "../components/about/parallax-pages/tester-experience/tester-experience";
-import IntoDevelopment from "../components/about/parallax-pages/developer-experience/developer-experience";
-import LetsConnect from "../components/about/parallax-pages/connect/lets-connect";
-import HeroPage from "../components/about/parallax-pages/hero-page/hero-page";
+import AboutMe from "../components/about/parallax-layers/about-me/about-me";
+import TesterPhase from "../components/about/parallax-layers/tester-experience/tester-experience";
+import IntoDevelopment from "../components/about/parallax-layers/developer-experience/developer-experience";
+import LetsConnect from "../components/about/parallax-layers/connect/lets-connect";
+import HeroPage from "../components/about/parallax-layers/hero-page/hero-page";
 
 const Home: NextPage = () => {
   const parallaxRef = useRef<IParallax>(null!);

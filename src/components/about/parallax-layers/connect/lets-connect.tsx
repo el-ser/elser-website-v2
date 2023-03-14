@@ -1,11 +1,11 @@
 import { IParallax, ParallaxLayer } from "@react-spring/parallax";
 import React, { MutableRefObject, useState, useEffect } from "react";
-import { FaAngleLeft } from "react-icons/fa";
 import Link from "next/link";
 
 import { terminalDetails, links } from "../../../../../config/about-page-data";
 import TerminalContainer from "../../../common/terminal-container/terminal-container";
 import Footer from "../../../common/footer/footer";
+import ResetParallaxArrow from "../../../common/reset-parallax-arrow/reset-parallax-arrow";
 
 const { letsConnect } = terminalDetails;
 
@@ -59,19 +59,11 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
         </section>
       </ParallaxLayer>
 
-      <ParallaxLayer
+      {/** Reset Arrow */}
+      <ResetParallaxArrow
         offset={4}
-        speed={3}
-        onClick={() =>
-          (ref as MutableRefObject<IParallax>).current?.scrollTo(0)
-        }
-        className="text-color text-3xl mt-[12vh]"
-        style={{
-          height: "10%",
-          width: "5%",
-        }}>
-        <FaAngleLeft className="h-full w-auto cursor-pointer animate-pulse-70" />
-      </ParallaxLayer>
+        onClick={() => (ref as MutableRefObject<IParallax>).current.scrollTo(0)}
+      />
     </>
   );
 });

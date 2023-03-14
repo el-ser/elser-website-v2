@@ -6,7 +6,7 @@ import { terminalDetails } from "../../../../../config/about-page-data";
 import HeadphonesIcon from "../../svg/about-me/headphones-icon";
 import CameraIcon from "../../svg/about-me/camera-icon";
 import TravelIcon from "../../svg/about-me/travel-icons";
-import AboutTerminal from "../../about-terminal/about-terminal";
+import AboutTerminal from "../about-terminal/about-terminal";
 
 const { aboutMe } = terminalDetails;
 

@@ -4,12 +4,10 @@ const DeltekIcon = ({ className }: { className?: string }) => (
     xmlns="http://www.w3.org/2000/svg"
     className={`transition-theme fill-navy-blue-500 dark:fill-smoke-600 ${className}`}
     viewBox="0 0 768.000000 198.000000"
-    preserveAspectRatio="xMidYMid meet"
-  >
+    preserveAspectRatio="xMidYMid meet">
     <g
       transform="translate(0.000000,198.000000) scale(0.100000,-0.100000)"
-      stroke="none"
-    >
+      stroke="none">
       <path d="M3050 1010 l0 -970 155 0 155 0 0 970 0 970 -155 0 -155 0 0 -970z" />
       <path
         d="M5990 1010 l0 -970 150 0 150 0 2 357 3 356 176 -219 c97 -120 230

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ParallaxLayer } from "@react-spring/parallax";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-import TerminalContainer from "../../common/terminal-container/terminal-container";
+import TerminalContainer from "../../../common/terminal-container/terminal-container";
 
 type Props = {
   offset: number;
@@ -51,24 +51,26 @@ const AboutTerminal: React.FunctionComponent<Props> = ({
             hasCursor
             headerText={headerText}
             headerClass="md:hidden">
-            <p>
-              {`Last login: ${dateState.toLocaleString("en-US", {
-                hour: "numeric",
-                minute: "numeric",
-                second: "numeric",
-                day: "numeric",
-                month: "long",
-                hour12: true,
-              })} `}
+            <>
+              <p>
+                {`Last login: ${dateState.toLocaleString("en-US", {
+                  hour: "numeric",
+                  minute: "numeric",
+                  second: "numeric",
+                  day: "numeric",
+                  month: "long",
+                  hour12: true,
+                })} `}
 
-              <br />
-              <span className="transition-theme text-accent-light dark:text-accent-dark">
-                el-ser@MacBook ~ %{" "}
-              </span>
-              {commandText}
-              <br />
-              <br />
-              {content}
+                <br />
+                <span className="transition-theme text-accent-light dark:text-accent-dark">
+                  el-ser@MacBook ~ %{" "}
+                </span>
+                {commandText}
+                <br />
+                <br />
+                {content}
+              </p>
               {techStack && (
                 <ul className="grid grid-cols-2 text-left">
                   {techStack.map((txt, idx) => {
@@ -85,7 +87,7 @@ const AboutTerminal: React.FunctionComponent<Props> = ({
                   })}
                 </ul>
               )}
-            </p>
+            </>
           </TerminalContainer>
           <FaAngleRight
             className="change-offset-button"
