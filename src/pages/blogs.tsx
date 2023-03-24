@@ -2,11 +2,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import BlogLoader from "../components/loaders/blog-loader";
-import BlogCard from "../components/blogs/blog-card";
+import BlogCard from "../components/blogs/blog-card/blog-card";
 import PageTitle from "../components/common/page-title/page-title";
 import Footer from "../components/common/footer/footer";
 
-import { useGetBlogsDataQuery, BlogDetails } from "../store/blogs/blogs.api";
+import {
+  useGetBlogsDataQuery,
+  BlogItemDetails,
+} from "../store/blogs/blogs.api";
 import useMountTrail from "../hooks/use-mount-trail";
 
 const Blogs: NextPage = () => {
@@ -26,7 +29,7 @@ const Blogs: NextPage = () => {
         {isLoading || isError ? (
           <BlogLoader />
         ) : (
-          data.map((blog: BlogDetails, idx: number) => {
+          data!.map((blog: BlogItemDetails, idx: number) => {
             trails.shift();
             return (
               <BlogCard key={blog._id} details={blog} trail={trails[idx]} />

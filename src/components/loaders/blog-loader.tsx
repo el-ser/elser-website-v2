@@ -1,4 +1,4 @@
-const BlogLoader = () => {
+const BlogLoader = (): JSX.Element => {
   return (
     <>
       <hr className="skeleton-bg border-[0.5px] rounded-full w-[95%] animate-pulse" />
@@ -10,8 +10,7 @@ const BlogLoader = () => {
         <div className="transition-theme flex flex-col w-full items-center gap-2 px-8 md:pr-8">
           <div
             id="title-placeholder"
-            className="flex flex-col justify-center h-24 w-full gap-2"
-          >
+            className="flex flex-col justify-center h-24 w-full gap-2">
             <div className="skeleton-bg w-full h-12 rounded-2xl" />
             <div className="skeleton-bg w-full h-12 rounded-2xl" />
             <div className="skeleton-bg w-1/4 h-12 rounded-2xl" />
@@ -22,8 +21,7 @@ const BlogLoader = () => {
           />
           <div
             id="description-placeholder"
-            className="flex flex-col items-center justify-start w-full gap-2 rounded-2xl"
-          >
+            className="flex flex-col items-center justify-start w-full gap-2 rounded-2xl">
             <div className="h-6 w-full skeleton-bg rounded-2xl" />
             <div className="h-6 w-full skeleton-bg rounded-2xl" />
             <div className="h-6 w-full skeleton-bg rounded-2xl" />
@@ -41,8 +39,7 @@ const BlogLoader = () => {
         <div className="transition-theme flex flex-col w-full items-center gap-2 px-8 md:pr-8">
           <div
             id="title-placeholder"
-            className="flex flex-col justify-center h-24 w-full gap-2"
-          >
+            className="flex flex-col justify-center h-24 w-full gap-2">
             <div className="skeleton-bg w-full h-12 rounded-2xl" />
             <div className="skeleton-bg w-full h-12 rounded-2xl" />
             <div className="skeleton-bg w-1/4 h-12 rounded-2xl" />
@@ -53,8 +50,7 @@ const BlogLoader = () => {
           />
           <div
             id="description-placeholder"
-            className="flex flex-col items-center justify-start w-full gap-2 rounded-2xl"
-          >
+            className="flex flex-col items-center justify-start w-full gap-2 rounded-2xl">
             <div className="h-6 w-full skeleton-bg rounded-2xl" />
             <div className="h-6 w-full skeleton-bg rounded-2xl" />
             <div className="h-6 w-1/2 self-start skeleton-bg rounded-2xl" />

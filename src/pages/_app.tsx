@@ -2,7 +2,10 @@ import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
 
+import "../styles/tailwind.css";
 import "../styles/globals.css";
+import "../styles/blog.css";
+
 import Layout from "../components/common/layout/layout";
 import { store } from "../store/store";
 import ReactIconProvider from "../components/common/icon-provider/icon-provider";
