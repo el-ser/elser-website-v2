@@ -98,8 +98,8 @@ const NavigationBar = () => {
         </div>
         <nav id="nav-links" className="hidden md:flex md:gap-8">
           <NavigationLinks
-            internalOptions={{ showIcon: false }}
-            externalOptions={{ showText: false }}
+            internalOptions={{ showIcon: false, className: "text-xl" }}
+            externalOptions={{ showText: false, className: "text-xl" }}
           />
         </nav>
       </animated.header>
