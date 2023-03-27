@@ -1,3 +1,3 @@
 export default function Ol(props: React.PropsWithChildren) {
-  return <ol className="list-decimal list-inside">{props.children}</ol>;
+  return <ol className="pl-4 list-decimal">{props.children}</ol>;
 }

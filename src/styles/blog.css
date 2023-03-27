@@ -8,6 +8,7 @@ article p code {
   border-radius: 5px;
   font-size: 16px;
   padding: 2px 4px 2px 4px;
+  overflow-x: scroll;
 }
 
 pre code {

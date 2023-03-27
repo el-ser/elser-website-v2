@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import BlogLoader from "../components/loaders/blog-loader";
+import BlogsLoader from "../components/loaders/blogs-loader";
 import BlogCard from "../components/blogs/blog-card/blog-card";
 import PageTitle from "../components/common/page-title/page-title";
 import Footer from "../components/common/footer/footer";
@@ -27,7 +27,7 @@ const Blogs: NextPage = () => {
       <main className="flex flex-col pt-[10vh] justify-center items-center gap-y-8">
         <PageTitle spring={trails[0]}>Blogs</PageTitle>
         {isLoading || isError ? (
-          <BlogLoader />
+          <BlogsLoader />
         ) : (
           data!.map((blog: BlogItemDetails, idx: number) => {
             trails.shift();
