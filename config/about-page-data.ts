@@ -48,7 +48,7 @@ export const terminalDetails = {
     ],
   },
   letsConnect: {
-    headerText: "LET'S CONNECT",
+    headerText: "What's next?",
     commandText: "elser connect",
     content: `So what's next? Checkout my blogs and experience! You may reach
               out to me through my LinkedIn or email`,

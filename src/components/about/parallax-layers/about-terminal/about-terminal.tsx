@@ -10,10 +10,11 @@ type Props = {
   sectionName: string;
   headerText: string;
   commandText: string;
-  content: string;
+  content: string | JSX.Element;
+  afterTerminal?: string | JSX.Element;
   techStack?: string[];
-  previousPageHandler: () => void;
-  nextPageHandler: () => void;
+  previousPageHandler?: () => void;
+  nextPageHandler?: () => void;
 };
 
 const AboutTerminal: React.FunctionComponent<Props> = ({
@@ -24,6 +25,7 @@ const AboutTerminal: React.FunctionComponent<Props> = ({
   commandText,
   content,
   techStack,
+  afterTerminal,
   previousPageHandler,
   nextPageHandler,
 }): JSX.Element => {
@@ -43,10 +45,12 @@ const AboutTerminal: React.FunctionComponent<Props> = ({
           {headerText}
         </h2>
         <div className="flex flex-row justify-center items-center">
-          <FaAngleLeft
-            className="change-offset-button"
-            onClick={previousPageHandler}
-          />
+          {previousPageHandler && (
+            <FaAngleLeft
+              className="change-offset-button"
+              onClick={previousPageHandler}
+            />
+          )}
           <TerminalContainer
             hasCursor
             headerText={headerText}
@@ -89,11 +93,14 @@ const AboutTerminal: React.FunctionComponent<Props> = ({
               )}
             </>
           </TerminalContainer>
-          <FaAngleRight
-            className="change-offset-button"
-            onClick={nextPageHandler}
-          />
+          {nextPageHandler && (
+            <FaAngleRight
+              className="change-offset-button"
+              onClick={nextPageHandler}
+            />
+          )}
         </div>
+        {afterTerminal}
       </section>
     </ParallaxLayer>
   );
