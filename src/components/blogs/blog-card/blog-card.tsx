@@ -20,7 +20,7 @@ const BlogCard = ({
     date: dateArr[2],
     year: dateArr[3],
   };
-  const url = "http://localhost:3000/blogs/" + slug;
+  const url = `${process.env.NEXT_PUBLIC_BASE_PATH}/blogs/${slug}`;
 
   return (
     <>
@@ -41,7 +41,7 @@ const BlogCard = ({
               className="rounded-2xl"
             />
           </div>
-          <div className="text-color flex flex-col gap-2 transition-theme font-ubuntuMono">
+          <div className="text-color flex flex-col gap-2 transition-theme font-ubuntuMono group-hover/blog:hover-text-color">
             <h2 className="font-lexendDeca font-bold text-3xl">{`${title}`}</h2>
             <p className="font-semibold opacity-70">{`${dateDetails.month} ${dateDetails.date}, ${dateDetails.year}`}</p>
             <p className="text-lg text-justify">{brief}</p>

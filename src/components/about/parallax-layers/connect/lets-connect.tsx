@@ -20,7 +20,10 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
         content={
           <>
             {letsConnect.content}
-            <span className="font-bold"> elser.code@gmail.com</span>
+            <span className="font-bold text-accent-light dark:text-accent-dark">
+              {" "}
+              elser.code@gmail.com
+            </span>
           </>
         }
         afterTerminal={
@@ -31,8 +34,8 @@ const LetsConnect = React.forwardRef<IParallax, {}>((_props, ref) => {
               {links.map(({ href, text, Icon }, idx) => {
                 return (
                   <Link href={href} key={idx}>
-                    <span className="cursor-pointer flex flex-col items-center">
-                      <Icon className="icon-size w-full hover:scale-105 duration-300" />
+                    <span className="cursor-pointer flex flex-col items-center hover-text-color">
+                      <Icon className="icon-size w-full hover:scale-105 duration-500" />
                       <span>{text}</span>
                     </span>
                   </Link>

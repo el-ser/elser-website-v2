@@ -8,10 +8,6 @@ import {
 } from "../../../store/navigation/navigation.selector";
 import { setIsSideBarOpen } from "../../../store/navigation/navigation.slice";
 
-type LinkOptions = {
-  showText?: boolean;
-};
-
 type NavigationLinksProps = {
   internalOptions: {
     showIcon: boolean;
@@ -30,7 +26,7 @@ const NavigationLinks = ({
   const internalLinks = useAppSelector(selectInternalLinks);
   const externalLinks = useAppSelector(selectExternalLinks);
   const linkClasses =
-    "flex gap-8 items-center text-color font-ubuntuMono no-underline transition-theme text-navy-blue-700 dark:text-smoke-600 hover:scale-110 cursor-pointer";
+    "flex gap-8 items-center text-color font-ubuntuMono no-underline transition-theme text-navy-blue-700 dark:text-smoke-600 hover:scale-110 cursor-pointer hover-text-color";
 
   return (
     <>

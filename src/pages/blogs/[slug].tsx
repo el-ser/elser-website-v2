@@ -17,17 +17,28 @@ import Ul from "../../components/blogs/markdown-components/ul/ul";
 import Ol from "../../components/blogs/markdown-components/ol/ol";
 import BlockQuote from "../../components/blogs/markdown-components/blockquote/blockquote";
 import BlogLoader from "../../components/loaders/blog-loader";
+import ApiError from "../../components/common/api-error/api-error";
+import PillButton from "../../components/common/pill-button/pill-button";
 
 import { useGetBlogDetailsQuery } from "../../store/blogs/blogs.api";
+
+const getReadingTime = (markdown: string) => {
+  const wpm = 225;
+  const words = markdown?.split(/\s+/).length;
+  const time = Math.ceil(words / wpm);
+  return time;
+};
 
 const Blog: NextPage = () => {
   const router = useRouter();
   const slug = router.query.slug as string;
   const detailsQueryResult = useGetBlogDetailsQuery({
     slug: slug,
-    hostname: "elser",
+    hostname: process.env.NEXT_PUBLIC_HASHNODE_USERNAME,
   });
-  const { data, isError, isLoading, isSuccess } = detailsQueryResult;
+
+  const { data, isLoading, isSuccess } = detailsQueryResult;
+
   return (
     <div className="flex justify-start items-start">
       <Head>
@@ -35,13 +46,14 @@ const Blog: NextPage = () => {
           {isSuccess && !isLoading ? data?.title : "Blogs / el-ser"}
         </title>
       </Head>
-      <article className="blog-content mt-[12vh] px-4 break-words w-full">
-        {/* {!isLoading && <BlogLoader />} */}
+      <article
+        id="blog-details"
+        className="blog-content mt-[12vh] px-4 break-words w-full">
         {isLoading ? (
           <BlogLoader />
         ) : (
           <>
-            {isSuccess && (
+            {isSuccess ? (
               <div className="flex flex-col md:px-32">
                 <div
                   id="image-container"
@@ -59,8 +71,13 @@ const Blog: NextPage = () => {
                 <h1 className="transition-theme text-color font-lexendDeca font-bold text-4xl self-center text-center my-4">
                   {data?.title}
                 </h1>
-                <div className="transition-theme text-color font-poppins opacity-70 self-center my-2">
-                  {format(new Date(data?.dateAdded), "MMM dd, yyyy")}
+                <div className="flex justify-center items-center text-color font-poppins self-center gap-4">
+                  <span className="my-2 border-2 rounded-lg px-2 py-1 border-navy-blue-700 dark:border-smoke-600">
+                    {format(new Date(data?.dateAdded), "MMM dd, yyyy")}
+                  </span>
+                  <span className="my-2 border-2 rounded-lg px-2 py-1 border-navy-blue-700 dark:border-smoke-600">
+                    {getReadingTime(data.contentMarkdown)} mins read
+                  </span>
                 </div>
                 <ReactMarkdown
                   children={data.contentMarkdown}
@@ -80,6 +97,8 @@ const Blog: NextPage = () => {
                   ]}
                 />
               </div>
+            ) : (
+              <ApiError />
             )}
           </>
         )}

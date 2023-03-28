@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MutableRefObject } from "react";
 
 import ResetParallaxArrow from "../../../common/reset-parallax-arrow/reset-parallax-arrow";
-import CustomButton from "../../../common/custom-button/custom-button";
+import PillButton from "../../../common/pill-button/pill-button";
 
 import { timelineDetails } from "../../../../../config/experience-page-data";
 
@@ -29,14 +29,14 @@ const Hiring = React.forwardRef<IParallax, {}>((_props, ref) => {
           Connect with me through my LinkedIn or directly download my CV!
         </p>
         <div className="flex gap-4">
-          <CustomButton>
+          <PillButton>
             <Link href="https://www.linkedin.com/in/manuel-serafin-bugarin-636554144/">
               LinkedIn
             </Link>
-          </CustomButton>
-          <CustomButton>
+          </PillButton>
+          <PillButton>
             <Link href="https://github.com/el-ser">Resume</Link>
-          </CustomButton>
+          </PillButton>
         </div>
       </ParallaxLayer>
 

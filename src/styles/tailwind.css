@@ -20,12 +20,18 @@
     @apply w-10 h-10 md:w-14 md:h-14;
   }
   .skeleton-bg {
-    @apply bg-navy-blue-700/20 dark:bg-smoke-600/40;
+    @apply bg-navy-blue-700/20 dark:bg-smoke-600/40 transition-theme animate-pulse;
   }
   .change-offset-button {
     @apply w-16 h-16 animate-pulse-70 transition-all duration-700 hover:scale-150 cursor-pointer;
   }
   .blog-text {
     @apply transition-theme text-color font-ubuntuMono my-8;
+  }
+  .hover-text-color {
+    @apply transition-theme hover:text-accent-light dark:hover:text-accent-dark;
+  }
+  .hover-pill-color {
+    @apply transition-theme hover:border-accent-light dark:hover:border-accent-dark;
   }
 }

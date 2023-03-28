@@ -39,14 +39,15 @@ const graphqlBaseQuery =
 
 export const blogsApi = createApi({
   reducerPath: "blogsApi",
-  baseQuery: graphqlBaseQuery({ baseUrl: "https://api.hashnode.com/" }),
+  baseQuery: graphqlBaseQuery({
+    baseUrl: process.env.NEXT_PUBLIC_HASHNODE_API!,
+  }),
   endpoints: (builder) => ({
     getBlogsData: builder.query({
       query: () => ({
-        body: getUserArticles("elser"),
+        body: getUserArticles(process.env.NEXT_PUBLIC_HASHNODE_USERNAME!),
       }),
       transformResponse: (response) => {
-        console.log(response);
         return response.user.publication.posts;
       },
     }),
