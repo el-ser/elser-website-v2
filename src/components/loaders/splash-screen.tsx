@@ -3,7 +3,7 @@ import { useSpring, useSpringRef, animated, easings } from "@react-spring/web";
 import { useEffect } from "react";
 import Head from "next/head";
 
-const SplashScreen = () => {
+const SplashScreen = (): JSX.Element => {
   const api = useSpringRef();
   const spring = useSpring({
     from: {

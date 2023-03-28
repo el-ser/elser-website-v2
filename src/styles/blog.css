@@ -1,0 +1,16 @@
+article a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+article p code {
+  background-color: rgb(132, 132, 132);
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 2px 4px 2px 4px;
+  overflow-x: scroll;
+}
+
+pre code {
+  border-radius: 10px;
+}

@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer components {
+  .transition-theme {
+    @apply transition-all duration-500 ease-in-out;
+  }
+  .navigation-bg {
+    @apply bg-white/80 dark:bg-navy-blue-800/90 shadow-md shadow-gray-200 dark:shadow-gray-900 backdrop-filter backdrop-blur-sm;
+  }
+  .text-color {
+    @apply text-navy-blue-700 dark:text-smoke-600;
+  }
+  .svg-color {
+    @apply transition-theme fill-navy-blue-700 dark:fill-smoke-600;
+  }
+  .icon-size {
+    @apply w-10 h-10 md:w-14 md:h-14;
+  }
+  .skeleton-bg {
+    @apply bg-navy-blue-700/20 dark:bg-smoke-600/40 transition-theme animate-pulse;
+  }
+  .change-offset-button {
+    @apply w-16 h-16 animate-pulse-70 transition-all duration-700 hover:scale-150 cursor-pointer;
+  }
+  .blog-text {
+    @apply transition-theme text-color font-ubuntuMono my-8;
+  }
+  .hover-text-color {
+    @apply transition-theme hover:text-accent-light dark:hover:text-accent-dark;
+  }
+  .hover-pill-color {
+    @apply transition-theme hover:border-accent-light dark:hover:border-accent-dark;
+  }
+}

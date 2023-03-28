@@ -9,7 +9,8 @@ import { animated } from "@react-spring/web";
 import WorkPageOverlay from "../components/work/svg/work-page-overlay";
 import ExperienceTitle from "../components/work/parallax-layers/experience-title/experience-title";
 
-import { useGetPublicRepositoriesQuery } from "../store/github/github.api";
+// TODO: To be added
+// import { useGetPublicRepositoriesQuery } from "../store/github/github.api";
 import useMountTrail from "../hooks/use-mount-trail";
 import { timelineDetails } from "../../config/experience-page-data";
 import CompanyDetails from "../components/work/parallax-layers/company-details/company-details";
