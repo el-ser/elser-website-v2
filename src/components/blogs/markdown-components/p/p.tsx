@@ -13,7 +13,7 @@ export default function P(props: React.PropsWithChildren) {
      * * ![image-alt.jpg](http://image.sample.com align="center")
      * * Regex Result [1] should be http://image.sample.com
      */
-    const regexResult = /!\[.+\]\((\S+).+\)/.exec(text);
+    const regexResult = /!\[.*\]\((\S+).+\)/.exec(text);
     const imageLink = regexResult![1];
 
     return (

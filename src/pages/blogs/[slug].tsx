@@ -12,13 +12,13 @@ import "highlight.js/styles/monokai-sublime.css";
 import P from "../../components/blogs/markdown-components/p/p";
 import H1 from "../../components/blogs/markdown-components/h1/h1";
 import H2 from "../../components/blogs/markdown-components/h2/h2";
+import H3 from "../../components/blogs/markdown-components/h3/h3";
 import Li from "../../components/blogs/markdown-components/li/li";
 import Ul from "../../components/blogs/markdown-components/ul/ul";
 import Ol from "../../components/blogs/markdown-components/ol/ol";
 import BlockQuote from "../../components/blogs/markdown-components/blockquote/blockquote";
 import BlogLoader from "../../components/loaders/blog-loader";
 import ApiError from "../../components/common/api-error/api-error";
-import PillButton from "../../components/common/pill-button/pill-button";
 
 import { useGetBlogDetailsQuery } from "../../store/blogs/blogs.api";
 
@@ -86,6 +86,7 @@ const Blog: NextPage = () => {
                     p: P,
                     h1: H1,
                     h2: H2,
+                    h3: H3,
                     li: Li,
                     ul: Ul,
                     ol: Ol,
