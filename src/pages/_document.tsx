@@ -14,9 +14,19 @@ export default function Document() {
           content="Manuel Serafin Bugarin's software developer portfolio"
         />
         <meta name="robot" content="index,follow" />
+        <meta property="og:title" content="elser - Manuel Serafin Bugarin" />
+        <meta
+          property="og:description"
+          content="Manuel Serafin Bugarin's software developer portfolio"
+        />
+        <meta property="og:url" content="https://www.elser.info" />
+        <meta
+          property="og:image"
+          content="https://cdn.hashnode.com/res/hashnode/image/upload/v1680225033937/a6bab2a6-fea2-4661-87e9-692751831143.png?auto=compress,format&format=webp"
+        />
         <link rel="icon" href="/favicon.ico" />
         <link
-        rel="apple-touch-icon"
+          rel="apple-touch-icon"
           sizes="180x180"
           href="/apple-touch-icon.png"
         />
