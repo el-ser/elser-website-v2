@@ -4,9 +4,11 @@ import "@testing-library/jest-dom";
 import AboutMe from "./about-me";
 
 beforeAll(() => {
-  // render(<AboutMe/>)
+  render(<AboutMe />);
 });
 
-describe("about me component", () => {
-  it("", () => {});
+describe("About Me", () => {
+  it("render icons", () => {
+    console.log("sample");
+  });
 });

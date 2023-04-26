@@ -1,7 +1,10 @@
 export default function BlogsLoader(): JSX.Element {
   return (
     <>
-      <hr className="skeleton-bg border-[0.5px] rounded-full w-[95%] animate-pulse" />
+      <hr
+        id="divider"
+        className="skeleton-bg border-[0.5px] rounded-full w-[95%] animate-pulse"
+      />
       <div className="flex flex-col gap-4 justify-center items-center w-full animate-pulse md:flex-row">
         <div
           id="image-placeholder"
@@ -30,7 +33,10 @@ export default function BlogsLoader(): JSX.Element {
         </div>
       </div>
 
-      <hr className="skeleton-bg border-[0.5px] rounded-full w-[95%] animate-pulse" />
+      <hr
+        id="divider"
+        className="skeleton-bg border-[0.5px] rounded-full w-[95%] animate-pulse"
+      />
       <div className="flex flex-col gap-4 justify-center items-center w-full animate-pulse md:flex-row">
         <div
           id="image-placeholder"

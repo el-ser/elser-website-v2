@@ -24,7 +24,8 @@
     "**/*.ts",
     "**/*.tsx",
     "public/service-worker.js",
-    "jest.config.js"
+    "jest.config.js",
+    "src/components/about/parallax-layers/about-me/about-me.test.js"
   ],
   "exclude": [
     "node_modules"
