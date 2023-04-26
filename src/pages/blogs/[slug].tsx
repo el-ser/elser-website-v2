@@ -17,7 +17,7 @@ import Li from "../../components/blogs/markdown-components/li/li";
 import Ul from "../../components/blogs/markdown-components/ul/ul";
 import Ol from "../../components/blogs/markdown-components/ol/ol";
 import BlockQuote from "../../components/blogs/markdown-components/blockquote/blockquote";
-import BlogLoader from "../../components/loaders/blog-loader";
+import BlogLoader from "../../components/loaders/blog-loader/blog-loader";
 import ApiError from "../../components/common/api-error/api-error";
 
 import { useGetBlogDetailsQuery } from "../../store/blogs/blogs.api";

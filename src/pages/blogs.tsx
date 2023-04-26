@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import BlogsLoader from "../components/loaders/blogs-loader";
+import BlogsLoader from "../components/loaders/blogs-loader/blogs-loader";
 import BlogCard from "../components/blogs/blog-card/blog-card";
 import PageTitle from "../components/common/page-title/page-title";
 import Footer from "../components/common/footer/footer";
